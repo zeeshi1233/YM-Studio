@@ -1,0 +1,6 @@
+{
+  "name": "YM Studios - Premium Beauty & Academy",
+  "description": "Melbourne-based luxury beauty studio & academy specializing in makeup artistry, skin treatments, facials, and professional beauty training.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
