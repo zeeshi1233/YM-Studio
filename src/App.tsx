@@ -69,11 +69,11 @@ export default function App() {
         />
 
         {/* Interactive 3D Product & Clinical Hardware Showcase */}
-        <ProductShowcase3D
+        {/* <ProductShowcase3D
           onSelectProduct={(productName) =>
             scrollToBooking(productName, 'Interested in incorporating this clinical formulation / hardware into my session.')
           }
-        />
+        /> */}
 
         {/* Interactive Real-Time Quote & Package Builder */}
         <InteractiveQuoteCalculator

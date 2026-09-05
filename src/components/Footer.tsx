@@ -163,13 +163,13 @@ export const Footer: React.FC = () => {
               </a>
             </div>
 
-            <button
+            {/* <button
               onClick={() => setShowQrModal(true)}
               className="inline-flex items-center gap-2 text-xs text-[#1FD1B2] hover:underline cursor-pointer pt-1"
             >
               <QrCode className="w-3.5 h-3.5" />
               <span>Scan Studio Instagram QR Badge</span>
-            </button>
+            </button> */}
           </div>
         </div>
 
