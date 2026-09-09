@@ -63,11 +63,18 @@ export const BookingForm: React.FC<BookingFormProps> = ({
     }
   }, [initialDetails]);
 
-  const serviceOptions = [
+  const baseServiceOptions = [
     'Bridal Makeup',
     'Event & Occasion Glam',
     'Soft Glam Makeup',
     'Natural Glam Makeup',
+    'Lash Tint',
+    'Brow Tint',
+    'Lash & Brow Package',
+    'Brow Lamination',
+    'Brow Lamination with Tint',
+    'Brow Lamination, Tint & Shaping',
+    'Waxing Services',
     'HydraFacial (Hydro-Dermabrasion)',
     'Microdermabrasion',
     'Classic European Facial',
@@ -82,6 +89,9 @@ export const BookingForm: React.FC<BookingFormProps> = ({
     'Custom Facial & Glam Package',
     'Other Special Enquiry',
   ];
+  const serviceOptions = Array.from(
+    new Set([formData.serviceCategory, ...baseServiceOptions].filter(Boolean))
+  );
 
   const validate = () => {
     const errs: { [key: string]: string } = {};
@@ -97,6 +107,29 @@ export const BookingForm: React.FC<BookingFormProps> = ({
     return errs;
   };
 
+  const STUDIO_WHATSAPP = '61469320044';
+
+  const buildEnquiryMessage = (data: BookingFormData, reference: string) =>
+    [
+      `Hi YM Studios! 👋`,
+      `I would like to book / enquire.`,
+      ``,
+      `📌 Booking Ref: ${reference}`,
+      `👤 Name: ${data.fullName}`,
+      `📧 Email: ${data.email}`,
+      `📞 Phone: ${data.phone}`,
+      `✨ Service: ${data.serviceCategory}`,
+      `📍 Appointment: ${data.isMobileService ? 'Mobile Makeup Service (Melbourne — travel fees may apply)' : 'Studio visit'}`,
+      ``,
+      `📝 Details:`,
+      data.details,
+    ].join('\n');
+
+  const openWhatsAppWithEnquiry = (data: BookingFormData, reference: string) => {
+    const msg = encodeURIComponent(buildEnquiryMessage(data, reference));
+    window.open(`https://wa.me/${STUDIO_WHATSAPP}?text=${msg}`, '_blank');
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const errs = validate();
@@ -105,16 +138,18 @@ export const BookingForm: React.FC<BookingFormProps> = ({
     if (Object.keys(errs).length === 0) {
       setIsSubmitting(true);
 
-      // Simulate network request
       setTimeout(() => {
         setIsSubmitting(false);
         const refCode = 'YM-' + Math.floor(100000 + Math.random() * 900000);
+        const bookingData = { ...formData };
+
         setSubmittedBooking({
           reference: refCode,
-          data: { ...formData },
+          data: bookingData,
         });
 
-        // Trigger celebratory confetti
+        openWhatsAppWithEnquiry(bookingData, refCode);
+
         try {
           confetti({
             particleCount: 80,
@@ -125,24 +160,22 @@ export const BookingForm: React.FC<BookingFormProps> = ({
         } catch {
           // fallback
         }
-      }, 700);
+      }, 400);
     }
   };
 
   const handleCopySummary = () => {
     if (!submittedBooking) return;
-    const text = `YM Studios Booking Reference: ${submittedBooking.reference}\nName: ${submittedBooking.data.fullName}\nService: ${submittedBooking.data.serviceCategory}\nPhone: ${submittedBooking.data.phone}\nDetails: ${submittedBooking.data.details}\nMobile Service: ${submittedBooking.data.isMobileService ? 'Yes (Melbourne)' : 'Studio'}`;
-    navigator.clipboard.writeText(text);
+    navigator.clipboard.writeText(
+      buildEnquiryMessage(submittedBooking.data, submittedBooking.reference)
+    );
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
 
   const openWhatsApp = () => {
     if (!submittedBooking) return;
-    const msg = encodeURIComponent(
-      `Hi YM Studios! I just submitted an enquiry [Ref: ${submittedBooking.reference}].\n\nName: ${submittedBooking.data.fullName}\nService: ${submittedBooking.data.serviceCategory}\nDetails: ${submittedBooking.data.details}`
-    );
-    window.open(`https://wa.me/?text=${msg}`, '_blank');
+    openWhatsAppWithEnquiry(submittedBooking.data, submittedBooking.reference);
   };
 
   return (
@@ -181,7 +214,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                 Enquiry Sent Successfully!
               </h3>
               <p className="text-sm text-[#94A3B8] max-w-md mx-auto mb-6">
-                Thank you, <span className="text-white font-semibold">{submittedBooking.data.fullName}</span>. I have received your enquiry for <span className="text-[#1FD1B2] font-semibold">{submittedBooking.data.serviceCategory}</span> and will get back to you within 24 hours.
+                Thank you, <span className="text-white font-semibold">{submittedBooking.data.fullName}</span>. Your enquiry for <span className="text-[#1FD1B2] font-semibold">{submittedBooking.data.serviceCategory}</span> has opened in WhatsApp with all your details ready to send to YM Studios.
               </p>
 
               <div className="max-w-md mx-auto bg-black/50 border border-white/[0.08] rounded-2xl p-4 text-left mb-6 text-xs space-y-2">
@@ -351,7 +384,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                 </div>
               </div>
 
-              {/* Mobile Service Checkbox Option */}
+              {/* Mobile Makeup Service Checkbox */}
               <div className="flex items-center gap-3 p-3.5 rounded-xl bg-black/40 border border-white/[0.06]">
                 <input
                   type="checkbox"
@@ -362,7 +395,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                 />
                 <label htmlFor="isMobileService" className="text-xs text-slate-300 cursor-pointer flex items-center gap-1.5">
                   <MapPin className="w-3.5 h-3.5 text-[#1FD1B2]" />
-                  <span>Request Mobile Service at my Melbourne location (travel fees may apply)</span>
+                  <span>Request Mobile Makeup Service at my Melbourne location (travel fees may apply — makeup only)</span>
                 </label>
               </div>
 

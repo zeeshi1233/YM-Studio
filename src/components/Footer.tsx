@@ -31,8 +31,18 @@ export const Footer: React.FC = () => {
             </p>
 
             <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed max-w-md">
-              Melbourne-based premier studio with nearly 12 years of artistry in bespoke bridal makeup, advanced clinical skin rejuvenation, event glam, and vocational beauty academy education.
+              Melbourne bridal makeup artist, HydraFacial & clinical facials, lash tint, brow lamination, precision waxing, hair styling, and beauty academy training. Mobile makeup services available across Victoria.
             </p>
+
+            <a
+              href="https://wa.me/61469320044"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-[#1FD1B2] hover:underline"
+            >
+              <Phone className="w-3.5 h-3.5" />
+              WhatsApp +61 469 320 044
+            </a>
 
             {/* SECTION 5: VISUAL Melbourne-based badge */}
             <div
@@ -40,7 +50,7 @@ export const Footer: React.FC = () => {
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-[#1FD1B2]/40 text-xs font-semibold text-[#1FD1B2] shadow-[0_0_20px_rgba(31,209,178,0.15)]"
             >
               <MapPin className="w-3.5 h-3.5 text-[#1FD1B2]" />
-              <span>Melbourne Based | Mobile Services Available Across Victoria</span>
+              <span>Melbourne Based | Mobile Makeup Services Available Across Victoria</span>
             </div>
           </div>
 
@@ -53,6 +63,11 @@ export const Footer: React.FC = () => {
               <li>
                 <a href="#services-section" className="hover:text-[#1FD1B2] transition-colors">
                   Makeup Artistry & Bridal Glam
+                </a>
+              </li>
+              <li>
+                <a href="#lash-brow-waxing-section" className="hover:text-[#F472B6] transition-colors">
+                  Lash, Brow & Precision Waxing
                 </a>
               </li>
               <li>

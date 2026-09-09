@@ -7,6 +7,7 @@ export const MAKEUP_SERVICES = [
     price: 'Custom Quote',
     popular: true,
     accent: '#1FD1B2',
+    image: '/images/bridal-makeup.png',
   },
   {
     id: 'event-glam',
@@ -16,6 +17,7 @@ export const MAKEUP_SERVICES = [
     price: '$110',
     popular: true,
     accent: '#B829A0',
+    image: '/images/event-glam.png',
   },
   {
     id: 'soft-glam',
@@ -24,6 +26,7 @@ export const MAKEUP_SERVICES = [
     description: 'Subtle yet defined radiance focusing on glowing skin, soft blended neutral tones, feathered brows, and fluttery lashes that elevate your natural features effortlessly.',
     price: '$95',
     accent: '#1FD1B2',
+    image: '/images/soft-glam.png',
   },
   {
     id: 'natural-glam',
@@ -32,6 +35,7 @@ export const MAKEUP_SERVICES = [
     description: 'Lightweight, dewy veil that enhances your natural bone structure and complexions for daytime events, professional headshots, and effortless charm.',
     price: '$85',
     accent: '#B829A0',
+    image: '/images/natural-glam.png',
   },
   {
     id: 'addon-lashes',
@@ -40,6 +44,7 @@ export const MAKEUP_SERVICES = [
     description: 'Choice of mink-feel, cluster, or strip lashes customized to your eye shape.',
     price: '$15 - $25',
     accent: '#1FD1B2',
+    image: '/images/lash-tint.png',
   },
   {
     id: 'nail-paint',
@@ -48,7 +53,90 @@ export const MAKEUP_SERVICES = [
     description: 'Precision cuticle care and luxury lacquer or gel finish to match your glam outfit.',
     price: '$25',
     accent: '#B829A0',
+    image: '/images/makeup-atelier.png',
   },
+];
+
+export const LASH_BROW_SERVICES = [
+  {
+    id: 'lash-tint',
+    name: 'Lash Tint',
+    subtitle: 'Darker, defined lashes without mascara',
+    description: 'A professional lash tint that deepens natural lashes for a wide-awake, mascara-free finish that lasts weeks.',
+    price: '$25',
+    image: '/images/lash-tint.png',
+    popular: false,
+    accent: '#1FD1B2',
+  },
+  {
+    id: 'brow-tint',
+    name: 'Brow Tint',
+    subtitle: 'Richer colour and fuller-looking brows',
+    description: 'Custom-mixed brow tint that fills sparse areas, adds depth, and frames the eyes with a polished salon finish.',
+    price: '$25',
+    image: '/images/brow-lamination.png',
+    popular: false,
+    accent: '#B829A0',
+  },
+  {
+    id: 'lash-brow-package',
+    name: 'Lash & Brow Package',
+    subtitle: 'Tinted lashes and brows in one visit',
+    description: 'The complete eye-framing duo — lash tint plus brow tint for balanced, camera-ready definition at a package saving.',
+    price: '$45',
+    image: '/images/lash-tint.png',
+    popular: true,
+    accent: '#1FD1B2',
+  },
+  {
+    id: 'brow-lamination',
+    name: 'Brow Lamination',
+    subtitle: 'Fluffy, brushed-up laminated brows',
+    description: 'A keratin brow lamination that tames, lifts, and sets hairs into a full, sculpted shape that lasts up to 6–8 weeks.',
+    price: '$40',
+    image: '/images/brow-lamination.png',
+    popular: true,
+    accent: '#B829A0',
+  },
+  {
+    id: 'brow-lamination-tint',
+    name: 'Brow Lamination with Tint',
+    subtitle: 'Lifted shape with richer colour',
+    description: 'Lamination plus custom tint so brows look fuller, darker, and perfectly set — the most requested brow combination.',
+    price: '$60',
+    image: '/images/brow-lamination.png',
+    popular: true,
+    accent: '#1FD1B2',
+  },
+  {
+    id: 'brow-lamination-tint-shaping',
+    name: 'Brow Lamination, Tint & Shaping',
+    subtitle: 'The complete brow transformation',
+    description: 'Lamination, custom tint, and precision shaping in one appointment for a fully sculpted, salon-finished brow look.',
+    price: 'Enquire',
+    image: '/images/brow-lamination.png',
+    popular: false,
+    accent: '#B829A0',
+  },
+];
+
+export const WAXING_SERVICES = [
+  { id: 'wax-eyebrow', name: 'Eyebrow', price: '$15', group: 'face' as const },
+  { id: 'wax-side', name: 'Side', price: '$15', group: 'face' as const },
+  { id: 'wax-upper-lip', name: 'Upper Lip', price: '$10', group: 'face' as const },
+  { id: 'wax-chin', name: 'Chin', price: '$20', group: 'face' as const },
+  { id: 'wax-full-face', name: 'Full Face', price: '$45', group: 'face' as const },
+  { id: 'wax-under-arms', name: 'Under Arms', price: '$15', group: 'body' as const },
+  { id: 'wax-half-arms', name: 'Half Arms', price: '$25', group: 'body' as const },
+  { id: 'wax-full-arms', name: 'Full Arms', price: '$35', group: 'body' as const },
+  { id: 'wax-half-legs', name: 'Half Legs', price: '$30', group: 'body' as const },
+  { id: 'wax-full-legs', name: 'Full Legs', price: '$45', group: 'body' as const },
+  { id: 'wax-back', name: 'Back', price: '$35', group: 'body' as const },
+  { id: 'wax-stomach', name: 'Stomach', price: '$25', group: 'body' as const },
+  { id: 'wax-chest', name: 'Chest', price: '$25', group: 'body' as const },
+  { id: 'wax-bikini', name: 'Bikini Line', price: '$25', group: 'body' as const },
+  { id: 'wax-brazilian', name: 'Brazilian Wax', price: '$45', group: 'body' as const, popular: true },
+  { id: 'wax-full-body', name: 'Full Body', price: '$100', group: 'body' as const, popular: true },
 ];
 
 export const DEEP_CLEANSING_FACIALS = [
