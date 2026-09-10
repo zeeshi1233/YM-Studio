@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import {
   Sparkles,
@@ -24,41 +25,34 @@ const OFFERINGS = [
     icon: Brush,
     title: 'Makeup Artistry',
     desc: 'Flawless looks tailored to you, for every occasion.',
-    target: 'makeup-services',
+    to: '/category/makeup',
   },
   {
     icon: Droplets,
     title: 'Skin & Beauty',
     desc: 'Healthy, glowing skin is always in.',
-    target: 'skin-treatments-section',
+    to: '/category/skin',
   },
   {
     icon: Crown,
     title: 'Bridal Makeup',
     desc: 'Your dream look for your special day.',
-    target: 'makeup-services',
+    to: '/category/makeup/bridal-makeup',
   },
   {
     icon: PartyPopper,
     title: 'Event & Occasion Glam',
     desc: 'Glamorous, elegant & camera-ready.',
-    target: 'makeup-services',
+    to: '/category/makeup/event-glam',
   },
 ];
 
 const PILLARS = [
-  { label: 'Makeup', target: 'makeup-services' },
-  { label: 'Skin', target: 'skin-treatments-section' },
-  { label: 'Bridal', target: 'makeup-services' },
-  { label: 'Events', target: 'makeup-services' },
+  { label: 'Makeup', to: '/category/makeup' },
+  { label: 'Skin', to: '/category/skin' },
+  { label: 'Henna', to: '/category/henna' },
+  { label: 'Academy', to: '/category/beauty-education' },
 ];
-
-const scrollTo = (id: string) => {
-  const element = document.getElementById(id);
-  if (!element) return;
-  const offsetPosition = element.getBoundingClientRect().top + window.pageYOffset - 85;
-  window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-};
 
 export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenConsultation }) => {
   return (
@@ -177,23 +171,22 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenConsultation })
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {OFFERINGS.map((item, index) => (
-                  <motion.button
+                  <motion.div
                     key={item.title}
-                    type="button"
-                    onClick={() => scrollTo(item.target)}
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.45, delay: 0.42 + index * 0.07 }}
-                    className="flyer-offer-row text-left cursor-pointer"
                   >
-                    <span className="flyer-gold-ring">
-                      <item.icon className="w-4 h-4" />
-                    </span>
-                    <span>
-                      <span className="block text-sm font-bold text-white">{item.title}</span>
-                      <span className="block text-[11px] text-[#94A3B8] leading-snug">{item.desc}</span>
-                    </span>
-                  </motion.button>
+                    <Link to={item.to} className="flyer-offer-row text-left cursor-pointer">
+                      <span className="flyer-gold-ring">
+                        <item.icon className="w-4 h-4" />
+                      </span>
+                      <span>
+                        <span className="block text-sm font-bold text-white">{item.title}</span>
+                        <span className="block text-[11px] text-[#94A3B8] leading-snug">{item.desc}</span>
+                      </span>
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -237,14 +230,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenConsultation })
               <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
                 <div className="flex flex-wrap gap-2">
                   {PILLARS.map((pillar) => (
-                    <button
+                    <Link
                       key={pillar.label}
-                      type="button"
-                      onClick={() => scrollTo(pillar.target)}
-                      className="px-3.5 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-black/55 backdrop-blur-md border border-[#D4AF37]/35 text-[#D4AF37] hover:bg-[#D4AF37]/15 transition-colors cursor-pointer"
+                      to={pillar.to}
+                      className="px-3.5 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-black/55 backdrop-blur-md border border-[#D4AF37]/35 text-[#D4AF37] hover:bg-[#D4AF37]/15 transition-colors"
                     >
                       {pillar.label}
-                    </button>
+                    </Link>
                   ))}
                 </div>
               </div>

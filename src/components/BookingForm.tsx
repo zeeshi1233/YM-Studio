@@ -31,9 +31,9 @@ export const BookingForm: React.FC<BookingFormProps> = ({
     phone: '',
     serviceCategory: initialServiceCategory || 'Bridal Makeup',
     details: initialDetails || '',
+    address: '',
     preferredDate: '',
     preferredTime: 'Morning (10:00 AM - 1:00 PM)',
-    isMobileService: false,
   });
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -75,6 +75,8 @@ export const BookingForm: React.FC<BookingFormProps> = ({
     'Brow Lamination with Tint',
     'Brow Lamination, Tint & Shaping',
     'Waxing Services',
+    'Henna & Mehndi',
+    'Beauty Education / Academy',
     'HydraFacial (Hydro-Dermabrasion)',
     'Microdermabrasion',
     'Classic European Facial',
@@ -119,7 +121,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
       `📧 Email: ${data.email}`,
       `📞 Phone: ${data.phone}`,
       `✨ Service: ${data.serviceCategory}`,
-      `📍 Appointment: ${data.isMobileService ? 'Mobile Makeup Service (Melbourne — travel fees may apply)' : 'Studio visit'}`,
+      `📍 Address: ${data.address?.trim() || 'Not provided'}`,
       ``,
       `📝 Details:`,
       data.details,
@@ -384,19 +386,28 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                 </div>
               </div>
 
-              {/* Mobile Makeup Service Checkbox */}
-              <div className="flex items-center gap-3 p-3.5 rounded-xl bg-black/40 border border-white/[0.06]">
-                <input
-                  type="checkbox"
-                  id="isMobileService"
-                  checked={formData.isMobileService}
-                  onChange={(e) => setFormData({ ...formData, isMobileService: e.target.checked })}
-                  className="w-4 h-4 rounded border-slate-700 text-[#1FD1B2] focus:ring-[#1FD1B2] cursor-pointer"
-                />
-                <label htmlFor="isMobileService" className="text-xs text-slate-300 cursor-pointer flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-[#1FD1B2]" />
-                  <span>Request Mobile Makeup Service at my Melbourne location (travel fees may apply — makeup only)</span>
+              {/* Address input */}
+              <div>
+                <label
+                  htmlFor="address"
+                  className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2"
+                >
+                  Address / Location
                 </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                    <MapPin className="w-4 h-4" />
+                  </div>
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    value={formData.address || ''}
+                    onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                    placeholder="Suburb / address for studio visit or mobile makeup"
+                    className="w-full pl-10 pr-4 py-3.5 rounded-2xl bg-[#0B0C10]/80 border border-white/[0.1] text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#1FD1B2] focus:shadow-[0_0_20px_rgba(31,209,178,0.3)] transition-all duration-300"
+                  />
+                </div>
               </div>
 
               {/* Field 5: Textarea - Tell me your date, occasion and what you need... */}

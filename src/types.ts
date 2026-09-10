@@ -15,6 +15,7 @@ export interface BookingFormData {
   phone: string;
   serviceCategory: string;
   details: string;
+  address?: string;
   preferredDate?: string;
   preferredTime?: string;
   isMobileService?: boolean;
