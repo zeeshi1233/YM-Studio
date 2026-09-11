@@ -19,7 +19,7 @@ export const HennaHighlight: React.FC<HennaHighlightProps> = ({ onEnquire }) => 
         >
           <div className="lg:col-span-5 relative min-h-[260px]">
             <img
-              src="/images/henna-bridal.png"
+              src="/images/services/svc-bridal-henna.png"
               alt="Bridal henna and mehndi artistry at YM Studios"
               width={800}
               height={1000}

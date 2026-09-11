@@ -105,7 +105,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         subtitle: 'Hand-crafted flutter lashes',
         description: 'Mink-feel, cluster or strip lashes customised to your eye shape.',
         price: '$15 – $25',
-        image: '/images/lash-tint.png',
+        image: '/images/services/svc-lash-addon.png',
       },
       {
         id: 'nail-paint',
@@ -114,7 +114,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         subtitle: 'Matching salon finish',
         description: 'Precision cuticle care and lacquer or gel finish to match your glam.',
         price: '$25',
-        image: '/images/makeup-atelier.png',
+        image: '/images/services/svc-nail-paint.png',
       },
     ],
   },
@@ -146,7 +146,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         subtitle: 'Richer colour and fuller brows',
         description: 'Custom brow tint that fills sparse areas and frames the eyes.',
         price: '$25',
-        image: '/images/brow-lamination.png',
+        image: '/images/services/svc-brow-tint.png',
       },
       {
         id: 'lash-brow-package',
@@ -155,7 +155,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         subtitle: 'Tinted lashes and brows together',
         description: 'Lash tint plus brow tint for balanced, camera-ready definition.',
         price: '$45',
-        image: '/images/lash-tint.png',
+        image: '/images/services/svc-lash-brow-package.png',
         popular: true,
       },
       {
@@ -165,7 +165,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         subtitle: 'Fluffy brushed-up brows',
         description: 'Keratin brow lamination that lifts and sets hairs for 6–8 weeks.',
         price: '$40',
-        image: '/images/brow-lamination.png',
+        image: '/images/services/svc-brow-lam-only.png',
         popular: true,
       },
       {
@@ -175,7 +175,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         subtitle: 'Lifted shape with richer colour',
         description: 'Lamination plus custom tint for fuller, darker, perfectly set brows.',
         price: '$60',
-        image: '/images/brow-lamination.png',
+        image: '/images/services/svc-brow-lam-tint.png',
         popular: true,
       },
       {
@@ -185,7 +185,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         subtitle: 'Complete brow transformation',
         description: 'Lamination, tint and precision shaping in one appointment.',
         price: 'Enquire',
-        image: '/images/brow-lamination.png',
+        image: '/images/services/svc-brow-full.png',
       },
       {
         id: 'wax-full-body',
@@ -194,7 +194,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         subtitle: 'Complete waxing package',
         description: 'Full body waxing for a smooth, salon finish. Other areas available individually.',
         price: '$100',
-        image: '/images/waxing-spa.png',
+        image: '/images/services/svc-wax-fullbody.png',
         popular: true,
         tags: ['Waxing'],
       },
@@ -205,7 +205,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         subtitle: 'Precise hygienic waxing',
         description: 'Professional Brazilian wax with hygiene-first technique.',
         price: '$45',
-        image: '/images/waxing-spa.png',
+        image: '/images/services/svc-wax-brazilian.png',
         tags: ['Waxing'],
       },
       {
@@ -216,7 +216,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         description:
           'Eyebrow $15 · Side $15 · Upper lip $10 · Chin $20 · Full face $45 · Under arms $15 · Half arms $25 · Full arms $35 · Half legs $30 · Full legs $45 · Back $35 · Stomach $25 · Chest $25 · Bikini line $25',
         price: 'From $10',
-        image: '/images/waxing-spa.png',
+        image: '/images/services/svc-wax-facebody.png',
         tags: ['Waxing'],
       },
     ],
@@ -230,7 +230,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     tagline: 'HydraFacial, peels & clinical glow',
     description:
       'Deep cleansing facials, HydraFacial, microdermabrasion, peels, LED therapy and clinical add-ons. Free 10-minute skin consultation with any facial.',
-    image: '/images/skin-treatment-sharp.png',
+    image: '/images/services/svc-hydra.png',
     accent: '#1FD1B2',
     services: [
       {
@@ -243,7 +243,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         price: 'From $65',
         priceNote: '30 min $65 · 1 hr $85',
         duration: '30–60 min',
-        image: '/images/skin-treatment-sharp.png',
+        image: '/images/services/svc-hydra.png',
         popular: true,
         tags: ['Clinical'],
       },
@@ -256,7 +256,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         price: 'From $65',
         priceNote: '30 min $65 · 1 hr $85',
         duration: '30–60 min',
-        image: '/images/skin-treatment-sharp.png',
+        image: '/images/services/svc-microderm.png',
         tags: ['Clinical'],
       },
       {
@@ -267,7 +267,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         description: 'Custom acid peels for pigmentation, breakouts and collagen turnover.',
         price: '$90',
         duration: '30–45 min',
-        image: '/images/skin-treatment-sharp.png',
+        image: '/images/services/svc-chem-peel.png',
       },
       {
         id: 'led-light-therapy',
@@ -277,7 +277,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         description: 'Purifying blue light and anti-aging red/NIR light therapy.',
         price: '$45',
         duration: '30–40 min',
-        image: '/images/skin-treatment-sharp.png',
+        image: '/images/services/svc-led.png',
       },
       {
         id: 'classic-european',
@@ -287,7 +287,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         description: 'Dual cleanse, exfoliation, extractions, massage and customised mask.',
         price: '$50',
         duration: '45 min',
-        image: '/images/skin-treatment-sharp.png',
+        image: '/images/services/svc-euro-facial.png',
         popular: true,
       },
       {
@@ -298,7 +298,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         description: 'Deep cleanse, gentle exfoliation and hydrating or detox mask.',
         price: '$35',
         duration: '40 min',
-        image: '/images/skin-treatment-sharp.png',
+        image: '/images/services/svc-basic-facial.png',
       },
       {
         id: 'face-lift-aroma',
@@ -308,7 +308,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         description: 'Sculpting facial massage with botanicals for lymphatic drainage and glow.',
         price: '$100',
         duration: '45–60 min',
-        image: '/images/skin-treatment-sharp.png',
+        image: '/images/services/svc-aroma-lift.png',
         popular: true,
       },
       {
@@ -319,7 +319,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         description: 'Ultrasonic extractions, high-frequency and calming actives for acne-prone skin.',
         price: '$80',
         duration: '45 min',
-        image: '/images/skin-treatment-sharp.png',
+        image: '/images/services/svc-acne.png',
       },
       {
         id: 'anti-aging-firming',
@@ -329,7 +329,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         description: 'Peptide serums, Gua Sha and collagen-firming mask to tone and restore.',
         price: '$100',
         duration: '45 min',
-        image: '/images/skin-treatment-sharp.png',
+        image: '/images/services/svc-antiaging.png',
       },
     ],
   },
@@ -341,7 +341,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     navLabel: 'Hair',
     tagline: 'Sleek, curls, updos & cuts',
     description: 'Straight & sleek, Hollywood curls, bridal updos, braids, trimming and style cuts. Pricing depends on hair length & volume.',
-    image: '/images/makeup-application-sharp.png',
+    image: '/images/services/svc-hair-updo.png',
     accent: '#D4AF37',
     services: [
       {
@@ -351,7 +351,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         subtitle: 'Glass-like smoothing',
         description: 'Ultra-glossy smoothing with thermal shield protection and frizz control.',
         price: 'Quote on length',
-        image: '/images/makeup-application-sharp.png',
+        image: '/images/services/svc-hair-straight.png',
       },
       {
         id: 'hair-curls',
@@ -360,7 +360,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         subtitle: 'Waves & bombshell curls',
         description: 'Textured waves, bombshell curls or vintage Hollywood waves.',
         price: 'Quote on length',
-        image: '/images/makeup-application-sharp.png',
+        image: '/images/services/svc-hair-curls.png',
       },
       {
         id: 'hair-buns',
@@ -369,7 +369,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         subtitle: 'Chignons, textured buns & pinned looks',
         description: 'Structured and romantic updos for weddings and formal events.',
         price: 'Quote on length',
-        image: '/images/bridal-hero-sharp.png',
+        image: '/images/services/svc-hair-updo.png',
         popular: true,
       },
       {
@@ -379,7 +379,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         subtitle: 'Fishtail, Dutch, crown & boho',
         description: 'Festival, function and wedding-ready braid styles.',
         price: 'Quote on length',
-        image: '/images/makeup-application-sharp.png',
+        image: '/images/services/svc-hair-braids.png',
       },
       {
         id: 'hair-trimming',
@@ -388,7 +388,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         subtitle: 'Refresh dead ends',
         description: 'Precision maintenance trim to preserve length and refresh ends.',
         price: 'Quote on length',
-        image: '/images/makeup-application-sharp.png',
+        image: '/images/services/svc-hair-trim.png',
       },
       {
         id: 'hair-style-cut',
@@ -397,7 +397,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         subtitle: 'Custom cut & face framing',
         description: 'Haircut crafted for your aesthetic and texture.',
         price: 'Quote on length',
-        image: '/images/makeup-application-sharp.png',
+        image: '/images/services/svc-hair-cut.png',
       },
     ],
   },
@@ -410,7 +410,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     tagline: 'Beautifully handcrafted. Meaningfully celebrated.',
     description:
       'Handcrafted henna for weddings, brides, birthdays, parties, corporate events and special celebrations. Custom designs, bridal henna, guest henna and event bookings — pricing on enquiry.',
-    image: '/images/henna-bridal.png',
+    image: '/images/services/svc-bridal-henna.png',
     accent: '#D4AF37',
     services: [
       {
@@ -423,7 +423,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         longDescription:
           'Make your wedding celebrations even more special with beautifully handcrafted bridal henna. Bookings are customised by design, coverage, number of people and event requirements.',
         price: 'Enquire',
-        image: '/images/henna-bridal.png',
+        image: '/images/services/svc-bridal-henna.png',
         popular: true,
         tags: ['Bridal', 'Weddings'],
         includes: ['Custom design consult', 'Bridal coverage options', 'Bridesmaids & guest add-ons'],
@@ -436,7 +436,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         description:
           'Personalised henna for parties, birthdays, corporate events, cultural celebrations and private functions — individual guests or larger groups.',
         price: 'Enquire',
-        image: '/images/henna-bridal.png',
+        image: '/images/services/svc-event-henna.png',
         tags: ['Events', 'Parties'],
       },
       {
@@ -446,7 +446,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         subtitle: 'Learn & celebrate together',
         description: 'Henna experiences and workshops for community, corporate and special events.',
         price: 'Enquire',
-        image: '/images/henna-bridal.png',
+        image: '/images/services/svc-henna-workshop.png',
         tags: ['Workshops'],
       },
     ],
@@ -460,7 +460,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     tagline: 'Learn makeup. Build confidence. Elevate your skills.',
     description:
       'Practical, hands-on makeup training for beginners, beauty enthusiasts and aspiring artists. Online and face-to-face options with a YM Studios Certificate of Completion.',
-    image: '/images/makeup-education.png',
+    image: '/images/services/svc-edu-beginners.png',
     accent: '#F472B6',
     services: [
       {
@@ -474,7 +474,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
           'Build everyday confidence with guided training in skin prep, complexion, eyes and finishing. Choose online learning or face-to-face coaching.',
         price: 'From $50',
         priceNote: 'Online from $50 · Face-to-Face from $75',
-        image: '/images/makeup-education.png',
+        image: '/images/services/svc-edu-personal.png',
         tags: ['Online', 'Face-to-Face'],
         includes: ['Everyday & glam looks', 'Product & brush guidance', 'Personalised application tips'],
       },
@@ -489,7 +489,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
           'Build foundational skills across complexion, colour matching, eyes, brows and lasting makeup — with a YM Studios Certificate of Completion included.',
         price: 'From $80',
         priceNote: 'Online from $80 · Face-to-Face from $100',
-        image: '/images/natural-glam.png',
+        image: '/images/services/svc-edu-beginners.png',
         popular: true,
         tags: ['Certificate included'],
         includes: ['Certificate of Completion', 'Tools & product knowledge', 'Foundation skill building'],
@@ -506,7 +506,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         price: '$250',
         priceNote: '3-Day Masterclass',
         duration: '3 days',
-        image: '/images/bridal-makeup.png',
+        image: '/images/services/svc-edu-bridal.png',
         popular: true,
         tags: ['Certificate included', 'Masterclass'],
         includes: ['Certificate of Completion', 'Bridal & party techniques', 'Long-lasting makeup methods'],
