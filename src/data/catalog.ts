@@ -71,10 +71,24 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         subtitle: 'Camera-ready for every celebration',
         description:
           'Striking, sophisticated makeup for galas, birthdays and formal events with sculpted complexion and radiant eyes.',
-        price: '$110',
+        price: '$220',
         image: '/images/event-glam.png',
         popular: true,
         tags: ['Events'],
+      },
+      {
+        id: 'girls-makeup',
+        slug: 'girls-makeup-under-16',
+        name: 'Girls Makeup (Under 16)',
+        subtitle: 'Age-appropriate soft glam for young clients',
+        description:
+          'Gentle, youthful makeup tailored for girls under 16 — soft, polished and camera-ready for parties, formals and special occasions.',
+        longDescription:
+          'A thoughtful, age-appropriate makeup look designed for younger clients. Soft complexion, light definition and natural glow — perfect for school formals, birthdays and family celebrations.',
+        price: '$150',
+        image: '/images/services/svc-girls-makeup.png',
+        tags: ['Under 16', 'Soft glam'],
+        includes: ['Age-appropriate products', 'Soft natural finish', 'Light lash option if suitable'],
       },
       {
         id: 'soft-glam',

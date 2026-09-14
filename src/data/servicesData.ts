@@ -14,10 +14,20 @@ export const MAKEUP_SERVICES = [
     name: 'Event & Occasion Glam',
     subtitle: 'Glamorous, elegant & camera-ready for every celebration',
     description: 'Striking, sophisticated makeup for red carpets, formal galas, birthdays, and celebrations. Sculpted complexion with radiant eyes and seamless contouring.',
-    price: '$110',
+    price: '$220',
     popular: true,
     accent: '#B829A0',
     image: '/images/event-glam.png',
+  },
+  {
+    id: 'girls-makeup',
+    name: 'Girls Makeup (Under 16)',
+    subtitle: 'Age-appropriate soft glam for young clients',
+    description:
+      'Gentle, youthful makeup tailored for girls under 16 — soft, polished and camera-ready for parties, formals and special occasions.',
+    price: '$150',
+    accent: '#1FD1B2',
+    image: '/images/services/svc-girls-makeup.png',
   },
   {
     id: 'soft-glam',

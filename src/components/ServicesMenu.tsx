@@ -72,7 +72,7 @@ export const ServicesMenu: React.FC<ServicesMenuProps> = ({ onSelectService }) =
             </span>
           </h2>
           <p className="text-sm uppercase tracking-[0.2em] text-[#B829A0] font-semibold mb-3">
-            Enhancing Beauty. Elevating Confidence.
+            Beauty, Perfected. Confidence, Redefined.
           </p>
           <p className="text-base sm:text-lg text-[#94A3B8]">
             Melbourne makeup artistry, clinical skin treatments, lash & brow, waxing, hair styling and academy training — crafted with precision and premium pigments.

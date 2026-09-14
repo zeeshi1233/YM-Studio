@@ -116,21 +116,24 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenConsultation })
               transition={{ duration: 0.55, delay: 0.24 }}
               className="text-sm sm:text-base uppercase tracking-[0.22em] text-[#B829A0] font-semibold mb-4"
             >
-              Enhancing Beauty. Elevating Confidence.
+              Beauty, Perfected. Confidence, Redefined.
             </motion.p>
 
-            <motion.p
+            <motion.div
               id="hero-description"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.3 }}
-              className="max-w-xl text-sm sm:text-base text-[#94A3B8] leading-relaxed mb-3"
+              className="max-w-xl mb-3 space-y-3"
             >
-              With nearly <span className="text-white font-semibold">12 years of experience</span> in
-              makeup artistry, skin & beauty, events and training — I bring passion, precision and
-              creativity to every client.{' '}
-              <span className="text-[#1FD1B2] font-semibold">You're in the right hands.</span>
-            </motion.p>
+              <p className="text-base sm:text-lg font-semibold text-white tracking-wide">
+                12 years. One passion. Flawless results.
+              </p>
+              <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
+                From makeup artistry to skincare, events to training—I bring precision, creativity, and heart to every face I touch. You&apos;re not just booking a service.{' '}
+                <span className="text-[#1FD1B2] font-semibold">You&apos;re in expert hands.</span>
+              </p>
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0 }}

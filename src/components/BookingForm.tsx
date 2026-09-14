@@ -66,6 +66,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
   const baseServiceOptions = [
     'Bridal Makeup',
     'Event & Occasion Glam',
+    'Girls Makeup (Under 16)',
     'Soft Glam Makeup',
     'Natural Glam Makeup',
     'Lash Tint',

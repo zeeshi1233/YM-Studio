@@ -14,7 +14,8 @@ const BASE_OPTIONS = [
   { id: 'classic-euro', name: 'Classic European Facial', duration: 45, price: 50, category: 'Facial' },
   { id: 'basic-3step', name: 'Basic 3-Step Express Facial', duration: 40, price: 35, category: 'Facial' },
   { id: 'face-lift', name: 'Face Lift Aroma Massage Facial', duration: 60, price: 100, category: 'Facial' },
-  { id: 'event-glam', name: 'Event & Occasion Glam Makeup', duration: 60, price: 110, category: 'Makeup' },
+  { id: 'event-glam', name: 'Event & Occasion Glam Makeup', duration: 60, price: 220, category: 'Makeup' },
+  { id: 'girls-makeup', name: 'Girls Makeup (Under 16)', duration: 50, price: 150, category: 'Makeup' },
   { id: 'soft-glam', name: 'Soft Glam Makeup', duration: 50, price: 95, category: 'Makeup' },
 ];
 
