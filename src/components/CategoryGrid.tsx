@@ -6,7 +6,7 @@ import { SERVICE_CATEGORIES } from '../data/catalog';
 
 export const CategoryGrid: React.FC = () => {
   return (
-    <section id="services-section" className="relative py-20 md:py-28 bg-[#0B0C10] overflow-hidden">
+    <section id="services-section" className="relative py-20 md:py-28 bg-[#0B0C10] overflow-hidden rounded-t-[2rem] shadow-[0_-24px_60px_rgba(0,0,0,0.45)]">
       <div className="absolute top-1/4 left-0 w-80 h-80 bg-[#1FD1B2]/10 blur-[140px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#B829A0]/10 blur-[140px] rounded-full pointer-events-none" />
 

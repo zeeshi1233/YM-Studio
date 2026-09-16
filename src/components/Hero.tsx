@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { YMLogo } from './YMLogo';
 import { MakeupAtmosphere } from './MakeupAtmosphere';
+import { HeroBackgroundSlider, useHeroSlideIndex } from './HeroBackgroundSlider';
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -35,13 +36,13 @@ const OFFERINGS = [
   },
   {
     icon: Crown,
-    title: 'Bridal Makeup',
+    title: 'Bridal Beauty',
     desc: 'Your dream look for your special day.',
     to: '/category/makeup/bridal-makeup',
   },
   {
     icon: PartyPopper,
-    title: 'Event & Occasion Glam',
+    title: 'Statement Looks for Every Occasion',
     desc: 'Glamorous, elegant & camera-ready.',
     to: '/category/makeup/event-glam',
   },
@@ -55,17 +56,21 @@ const PILLARS = [
 ];
 
 export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenConsultation }) => {
+  const { index, setIndex } = useHeroSlideIndex();
+
   return (
     <section
       id="hero-section"
-      className="relative min-h-[100svh] pt-24 pb-0 overflow-hidden bg-mesh-dark floral-overlay"
+      className="relative min-h-[100svh] pt-24 pb-0 overflow-visible bg-[#0B0C10]"
       aria-label="YM Studios Melbourne beauty hero"
     >
+      {/* Category image loop — makeup, hair, skin, henna, brow, academy */}
+      <HeroBackgroundSlider index={index} variant="full" showMeta={false} />
       <MakeupAtmosphere />
       <div className="absolute top-1/4 left-0 w-[420px] h-[420px] rounded-full bg-[#B829A0]/18 blur-[140px] pointer-events-none animate-[glowPulse_6s_ease-in-out_infinite]" />
       <div className="absolute bottom-1/5 right-0 w-[420px] h-[420px] rounded-full bg-[#1FD1B2]/16 blur-[140px] pointer-events-none animate-[glowPulse_7s_ease-in-out_infinite]" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 md:pt-10 pb-16 md:pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 md:pt-10 pb-16 md:pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left copy — flyer style */}
           <div className="lg:col-span-6 relative z-10">
@@ -203,22 +208,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenConsultation })
             className="lg:col-span-6 relative"
           >
             <div className="relative rounded-[2rem] overflow-hidden border border-[#D4AF37]/25 shadow-[0_30px_80px_rgba(0,0,0,0.55)] aspect-[3/4] max-h-[640px] w-full max-w-[520px] mx-auto lg:ml-auto">
-              <img
-                src="/images/bridal-hero-sharp.png"
-                alt="YM Studios bridal and event makeup artistry Melbourne"
-                width={900}
-                height={1200}
-                className="absolute inset-0 w-full h-full object-cover object-center"
-                decoding="async"
+              <HeroBackgroundSlider
+                index={index}
+                onSelect={setIndex}
+                variant="card"
+                showMeta
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C10]/80 via-transparent to-black/10 pointer-events-none" />
               <div className="gold-curve-divider" aria-hidden />
 
               <motion.div
                 initial={{ scale: 0.85, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
-                className="absolute top-5 right-5 w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-[#B829A0] to-[#7c1d6e] border-2 border-[#D4AF37]/50 shadow-[0_0_30px_rgba(184,41,160,0.45)] flex flex-col items-center justify-center text-center p-3 animate-[floatSoft_5s_ease-in-out_infinite]"
+                className="absolute top-5 right-5 z-10 w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-[#B829A0] to-[#7c1d6e] border-2 border-[#D4AF37]/50 shadow-[0_0_30px_rgba(184,41,160,0.45)] flex flex-col items-center justify-center text-center p-3 animate-[floatSoft_5s_ease-in-out_infinite]"
               >
                 <Heart className="w-4 h-4 text-[#D4AF37] mb-1" />
                 <span className="text-[10px] uppercase tracking-wider text-white/90 font-semibold leading-tight">
@@ -230,18 +232,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenConsultation })
                 <span className="font-script text-lg text-[#D4AF37] leading-none mt-0.5">Your Style</span>
               </motion.div>
 
-              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
-                <div className="flex flex-wrap gap-2">
-                  {PILLARS.map((pillar) => (
-                    <Link
-                      key={pillar.label}
-                      to={pillar.to}
-                      className="px-3.5 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-black/55 backdrop-blur-md border border-[#D4AF37]/35 text-[#D4AF37] hover:bg-[#D4AF37]/15 transition-colors"
-                    >
-                      {pillar.label}
-                    </Link>
-                  ))}
-                </div>
+              <div className="absolute top-5 left-5 z-10 flex flex-wrap gap-2 max-w-[55%]">
+                {PILLARS.map((pillar) => (
+                  <Link
+                    key={pillar.label}
+                    to={pillar.to}
+                    className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-black/55 backdrop-blur-md border border-[#D4AF37]/35 text-[#D4AF37] hover:bg-[#D4AF37]/15 transition-colors"
+                  >
+                    {pillar.label}
+                  </Link>
+                ))}
               </div>
             </div>
           </motion.div>
@@ -249,7 +249,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenConsultation })
       </div>
 
       {/* Bottom brand strip like flyer */}
-      <div className="relative border-t border-[#D4AF37]/20 bg-[#062826]/80 backdrop-blur-xl">
+      <div className="relative z-10 border-t border-[#D4AF37]/20 bg-[#062826]/80 backdrop-blur-xl">
         <div className="absolute inset-0 opacity-20 floral-overlay pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs sm:text-sm uppercase tracking-[0.18em] text-white/90 text-center sm:text-left font-medium">

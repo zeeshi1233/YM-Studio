@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { OverlappingScrollHero } from './components/OverlappingScrollHero';
 import { CategoryGrid } from './components/CategoryGrid';
 import { HennaHighlight } from './components/HennaHighlight';
 import { Academy } from './components/Academy';
@@ -28,8 +29,9 @@ function HomePage({
   enquiryDetails: string;
 }) {
   return (
-    <>
-      <Hero onOpenBooking={() => onBook()} onOpenConsultation={onConsult} />
+    <OverlappingScrollHero
+      hero={<Hero onOpenBooking={() => onBook()} onOpenConsultation={onConsult} />}
+    >
       <CategoryGrid />
       <HennaHighlight onEnquire={() => onBook('Henna & Mehndi', 'Interested in henna / mehndi booking')} />
       <Academy
@@ -40,13 +42,13 @@ function HomePage({
       <InteractiveQuoteCalculator onApplyPackage={onApplyPackage} />
       <BookingForm initialServiceCategory={selectedService} initialDetails={enquiryDetails} />
       <SocialQRSection />
-    </>
+    </OverlappingScrollHero>
   );
 }
 
 export default function App() {
   const navigate = useNavigate();
-  const [selectedService, setSelectedService] = useState<string>('Bridal Makeup');
+  const [selectedService, setSelectedService] = useState<string>('Bridal Beauty');
   const [enquiryDetails, setEnquiryDetails] = useState<string>('');
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
 

@@ -29,7 +29,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
     fullName: '',
     email: '',
     phone: '',
-    serviceCategory: initialServiceCategory || 'Bridal Makeup',
+    serviceCategory: initialServiceCategory || 'Bridal Beauty',
     details: initialDetails || '',
     address: '',
     preferredDate: '',
@@ -64,11 +64,12 @@ export const BookingForm: React.FC<BookingFormProps> = ({
   }, [initialDetails]);
 
   const baseServiceOptions = [
-    'Bridal Makeup',
-    'Event & Occasion Glam',
-    'Girls Makeup (Under 16)',
-    'Soft Glam Makeup',
-    'Natural Glam Makeup',
+    'Bridal Beauty',
+    'Statement Looks for Every Occasion',
+    'Party Glam',
+    'Girls (Under 16)',
+    'Soft Glam',
+    'Natural Glam',
     'Lash Tint',
     'Brow Tint',
     'Lash & Brow Package',

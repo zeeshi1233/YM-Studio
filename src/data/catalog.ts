@@ -21,6 +21,8 @@ export interface ServiceDetail {
   tags?: string[];
   includes?: string[];
   duration?: string;
+  /** Tailwind object-position class so faces stay visible in cover crops */
+  imageFocus?: string;
 }
 
 export interface ServiceCategory {
@@ -45,21 +47,22 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     navLabel: 'Makeup',
     tagline: 'Bridal, soft glam & occasion looks',
     description:
-      'HD bridal makeup, event glam, soft and natural looks — tailored for every occasion, including mobile makeup across Victoria.',
+      'HD bridal beauty, statement looks, soft and natural glam — tailored for every occasion, including mobile services across Victoria.',
     image: '/images/bridal-hero-sharp.png',
     accent: '#1FD1B2',
     services: [
       {
         id: 'bridal-makeup',
         slug: 'bridal-makeup',
-        name: 'Bridal Makeup',
+        name: 'Bridal Beauty',
         subtitle: 'Your dream bridal look for your special day',
         description:
           'Bespoke HD bridal artistry engineered to photograph flawlessly and last 16+ hours. Includes skin prep, custom lashes and touch-up guidance.',
         longDescription:
-          'From soft romantic bridal to full glam, we design a look that feels like you — waterproof, camera-ready and timed for your wedding schedule. Mobile bridal makeup available across Melbourne & Victoria.',
+          'From soft romantic bridal to full glam, we design a look that feels like you — waterproof, camera-ready and timed for your wedding schedule. Mobile bridal beauty available across Melbourne & Victoria.',
         price: 'Custom Quote',
-        image: '/images/bridal-makeup.png',
+        image: '/images/services/svc-bridal-makeup.jpg',
+        imageFocus: 'object-[50%_18%]',
         popular: true,
         tags: ['Bridal', 'Mobile available'],
         includes: ['Premium skin prep', 'Custom lash application', 'Long-wear HD finish', 'Touch-up protocol'],
@@ -67,24 +70,38 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       {
         id: 'event-glam',
         slug: 'event-glam',
-        name: 'Event & Occasion Glam',
-        subtitle: 'Camera-ready for every celebration',
+        name: 'Statement Looks for Every Occasion',
+        subtitle: 'Bold, glamorous & camera-ready',
         description:
-          'Striking, sophisticated makeup for galas, birthdays and formal events with sculpted complexion and radiant eyes.',
+          'Striking, sophisticated looks for galas, birthdays and formal events with sculpted complexion and radiant eyes.',
         price: '$220',
-        image: '/images/event-glam.png',
+        image: '/images/services/svc-statement-look.jpg',
+        imageFocus: 'object-[center_18%]',
         popular: true,
         tags: ['Events'],
       },
       {
+        id: 'party-makeup',
+        slug: 'party-makeup',
+        name: 'Party Glam',
+        subtitle: 'Bold glam for nights out',
+        description:
+          'High-impact party glam with statement eyes, sculpted complexion and long-wear colour that photographs beautifully.',
+        price: '$220',
+        image: '/images/services/svc-party-makeup.jpg',
+        imageFocus: 'object-[center_22%]',
+        popular: true,
+        tags: ['Party', 'Events'],
+      },
+      {
         id: 'girls-makeup',
         slug: 'girls-makeup-under-16',
-        name: 'Girls Makeup (Under 16)',
+        name: 'Girls (Under 16)',
         subtitle: 'Age-appropriate soft glam for young clients',
         description:
-          'Gentle, youthful makeup tailored for girls under 16 — soft, polished and camera-ready for parties, formals and special occasions.',
+          'Gentle, youthful looks tailored for girls under 16 — soft, polished and camera-ready for parties, formals and special occasions.',
         longDescription:
-          'A thoughtful, age-appropriate makeup look designed for younger clients. Soft complexion, light definition and natural glow — perfect for school formals, birthdays and family celebrations.',
+          'A thoughtful, age-appropriate look designed for younger clients. Soft complexion, light definition and natural glow — perfect for school formals, birthdays and family celebrations.',
         price: '$150',
         image: '/images/services/svc-girls-makeup.png',
         tags: ['Under 16', 'Soft glam'],
@@ -93,19 +110,20 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       {
         id: 'soft-glam',
         slug: 'soft-glam',
-        name: 'Soft Glam Makeup',
+        name: 'Soft Glam',
         subtitle: 'Ethereal, luminous elegance',
         description:
           'Soft blended neutrals, feathered brows and fluttery lashes that elevate natural features with a luminous glow.',
         price: '$95',
-        image: '/images/soft-glam.png',
+        image: '/images/services/svc-soft-glam.jpg',
+        imageFocus: 'object-[50%_50%]',
         tags: ['Soft glam'],
       },
       {
         id: 'natural-glam',
         slug: 'natural-glam',
-        name: 'Natural Glam Makeup',
-        subtitle: 'Fresh polished no-makeup makeup',
+        name: 'Natural Glam',
+        subtitle: 'Fresh polished natural finish',
         description:
           'Lightweight dewy finish for daytime events, headshots and effortless everyday polish.',
         price: '$85',

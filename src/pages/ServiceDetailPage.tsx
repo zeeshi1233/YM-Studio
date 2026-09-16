@@ -33,7 +33,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBook }) 
               alt={service.name}
               width={900}
               height={1125}
-              className="absolute inset-0 w-full h-full object-cover object-center"
+              className={`absolute inset-0 w-full h-full object-cover ${service.imageFocus || 'object-center'}`}
               decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />

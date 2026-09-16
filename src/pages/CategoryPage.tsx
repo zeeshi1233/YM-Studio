@@ -108,7 +108,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ onBook }) => {
                   alt={service.name}
                   width={640}
                   height={480}
-                  className="w-full h-full object-cover object-center"
+                  className={`w-full h-full object-cover ${service.imageFocus || 'object-center'}`}
                   loading="lazy"
                   decoding="async"
                 />
