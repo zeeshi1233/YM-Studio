@@ -47,7 +47,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     navLabel: 'Makeup',
     tagline: 'Bridal, soft glam & occasion looks',
     description:
-      'HD bridal beauty, statement looks, soft and natural glam — tailored for every occasion, including mobile services across Victoria.',
+      'HD bridal beauty, statement looks and soft glam — tailored for every occasion, including mobile services across Victoria.',
     image: '/images/bridal-hero-sharp.png',
     accent: '#1FD1B2',
     services: [
@@ -118,17 +118,6 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         image: '/images/services/svc-soft-glam.jpg',
         imageFocus: 'object-[50%_50%]',
         tags: ['Soft glam'],
-      },
-      {
-        id: 'natural-glam',
-        slug: 'natural-glam',
-        name: 'Natural Glam',
-        subtitle: 'Fresh polished natural finish',
-        description:
-          'Lightweight dewy finish for daytime events, headshots and effortless everyday polish.',
-        price: '$85',
-        image: '/images/natural-glam.png',
-        tags: ['Natural'],
       },
       {
         id: 'addon-lashes',

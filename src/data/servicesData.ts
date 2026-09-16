@@ -39,15 +39,6 @@ export const MAKEUP_SERVICES = [
     image: '/images/services/svc-soft-glam.jpg',
   },
   {
-    id: 'natural-glam',
-    name: 'Natural Glam',
-    subtitle: 'Fresh, polished natural finish',
-    description: 'Lightweight, dewy veil that enhances your natural bone structure and complexions for daytime events, professional headshots, and effortless charm.',
-    price: '$85',
-    accent: '#B829A0',
-    image: '/images/natural-glam.png',
-  },
-  {
     id: 'addon-lashes',
     name: 'Luxury Lash Add-On',
     subtitle: 'Hand-crafted flutter lashes',

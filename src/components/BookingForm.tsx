@@ -69,7 +69,6 @@ export const BookingForm: React.FC<BookingFormProps> = ({
     'Party Glam',
     'Girls (Under 16)',
     'Soft Glam',
-    'Natural Glam',
     'Lash Tint',
     'Brow Tint',
     'Lash & Brow Package',
