@@ -396,8 +396,8 @@ export const ServicesMenu: React.FC<ServicesMenuProps> = ({ onSelectService }) =
                         </div>
                       )}
                       {item.unavailable && (
-                        <div className="absolute top-4 right-4 bg-slate-800 text-slate-400 text-[10px] uppercase font-semibold tracking-wider px-2 py-0.5 rounded-full">
-                          Currently Unavailable
+                        <div className="absolute top-4 right-4 bg-amber-500/20 border border-amber-500/40 text-amber-300 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">
+                          Currently Not Available
                         </div>
                       )}
                       <div>

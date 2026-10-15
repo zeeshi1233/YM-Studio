@@ -5,27 +5,33 @@ import { AnimatePresence, motion } from 'motion/react';
 export const HERO_BG_SLIDES = [
   {
     src: '/images/services/svc-bridal-makeup.jpg',
-    label: 'Bridal Beauty',
+    label: 'Bridal Makeup',
     category: 'Makeup',
     focus: 'object-[50%_18%]',
   },
   {
     src: '/images/services/svc-soft-glam.jpg',
-    label: 'Soft Glam',
+    label: 'Natural & Soft Glam',
     category: 'Makeup',
     focus: 'object-[50%_20%]',
   },
   {
     src: '/images/services/svc-party-makeup.jpg',
-    label: 'Party Glam',
+    label: 'Party & Special Occasion',
     category: 'Makeup',
     focus: 'object-[center_22%]',
   },
   {
-    src: '/images/services/svc-statement-look.jpg',
-    label: 'Statement Looks',
+    src: '/images/IMG-20261014-WA0051.jpg',
+    label: 'Photoshoot & Editorial',
     category: 'Makeup',
-    focus: 'object-[center_18%]',
+    focus: 'object-[center_25%]',
+  },
+  {
+    src: '/images/IMG-20261014-WA0050.jpg',
+    label: 'Eye Makeup Only',
+    category: 'Makeup',
+    focus: 'object-[center_30%]',
   },
   {
     src: '/images/services/svc-hair-updo.png',

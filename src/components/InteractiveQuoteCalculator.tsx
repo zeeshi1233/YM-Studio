@@ -7,23 +7,25 @@ interface InteractiveQuoteCalculatorProps {
 }
 
 const BASE_OPTIONS = [
-  { id: 'hydra-30', name: 'Hydra-Infusion (30 min)', duration: 30, price: 65, category: 'Skin Treatment' },
-  { id: 'hydra-60', name: 'Hydra-Infusion (1 hour)', duration: 60, price: 85, category: 'Skin Treatment' },
+  { id: 'hydra-30', name: 'Hydrodermabrasion (30 min)', duration: 30, price: 65, category: 'Skin Treatment' },
+  { id: 'hydra-60', name: 'Hydrodermabrasion (1 hour)', duration: 60, price: 85, category: 'Skin Treatment' },
   { id: 'micro-30', name: 'Microdermabrasion (30 min)', duration: 30, price: 65, category: 'Skin Treatment' },
   { id: 'micro-60', name: 'Microdermabrasion (1 hour)', duration: 60, price: 85, category: 'Skin Treatment' },
-  { id: 'classic-euro', name: 'Classic European Facial', duration: 45, price: 50, category: 'Facial' },
-  { id: 'basic-3step', name: 'Basic 3-Step Express Facial', duration: 40, price: 35, category: 'Facial' },
-  { id: 'face-lift', name: 'Face Lift Aroma Massage Facial', duration: 60, price: 100, category: 'Facial' },
-  { id: 'event-glam', name: 'Statement Looks for Every Occasion', duration: 60, price: 220, category: 'Makeup' },
+  { id: 'chemical-peel', name: 'Chemical Peel', duration: 45, price: 90, category: 'Skin Treatment' },
+  { id: 'classic-euro', name: 'Classic European Facial', duration: 60, price: 100, category: 'Facial' },
+  { id: 'basic-3step', name: 'Basic 3-Step Facial', duration: 30, price: 35, category: 'Facial' },
+  { id: 'custom-facial', name: 'Customized Facial', duration: 60, price: 100, category: 'Facial' },
+  { id: 'party-glam', name: 'Party & Special Occasion', duration: 60, price: 220, category: 'Makeup' },
+  { id: 'natural-soft', name: 'Natural & Soft Glam', duration: 50, price: 95, category: 'Makeup' },
+  { id: 'eye-makeup', name: 'Eye Makeup Only', duration: 35, price: 70, category: 'Makeup' },
   { id: 'girls-makeup', name: 'Girls (Under 16)', duration: 50, price: 150, category: 'Makeup' },
-  { id: 'soft-glam', name: 'Soft Glam', duration: 50, price: 95, category: 'Makeup' },
 ];
 
 export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProps> = ({
   onApplyPackage,
 }) => {
   const [selectedBaseId, setSelectedBaseId] = useState<string>('hydra-60');
-  const [selectedAddonIds, setSelectedAddonIds] = useState<string[]>(['add-led']);
+  const [selectedAddonIds, setSelectedAddonIds] = useState<string[]>(['add-glow-mask']);
 
   const selectedBase = BASE_OPTIONS.find((b) => b.id === selectedBaseId) || BASE_OPTIONS[0];
 
@@ -134,34 +136,46 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {FACIAL_ADDONS.map((addon) => {
+                  const isUnavailable = 'unavailable' in addon && Boolean(addon.unavailable);
                   const isChecked = selectedAddonIds.includes(addon.id);
                   return (
                     <div
                       key={addon.id}
-                      onClick={() => toggleAddon(addon.id)}
-                      className={`p-3 rounded-xl border transition-all duration-200 cursor-pointer flex items-center justify-between ${
-                        isChecked
-                          ? 'bg-[#B829A0]/15 border-[#B829A0] shadow-[0_0_15px_rgba(184,41,160,0.25)]'
-                          : 'bg-black/40 border-white/[0.06] hover:border-white/[0.2]'
+                      onClick={() => !isUnavailable && toggleAddon(addon.id)}
+                      className={`p-3 rounded-xl border transition-all duration-200 flex items-center justify-between ${
+                        isUnavailable
+                          ? 'opacity-50 cursor-not-allowed bg-black/20 border-white/[0.04]'
+                          : isChecked
+                          ? 'bg-[#B829A0]/15 border-[#B829A0] shadow-[0_0_15px_rgba(184,41,160,0.25)] cursor-pointer'
+                          : 'bg-black/40 border-white/[0.06] hover:border-white/[0.2] cursor-pointer'
                       }`}
                     >
                       <div className="flex items-center gap-3">
                         <div
                           className={`w-5 h-5 rounded-md flex items-center justify-center border transition-all ${
-                            isChecked
+                            isUnavailable
+                              ? 'border-slate-700 bg-slate-900/60 text-slate-500'
+                              : isChecked
                               ? 'bg-[#B829A0] border-[#B829A0] text-white'
                               : 'border-white/[0.2] bg-black/40'
                           }`}
                         >
-                          {isChecked && <Check className="w-3.5 h-3.5" />}
+                          {isChecked && !isUnavailable && <Check className="w-3.5 h-3.5" />}
                         </div>
                         <div>
-                          <div className="text-xs font-bold text-white">{addon.name}</div>
+                          <div className="text-xs font-bold text-white flex items-center gap-2">
+                            {addon.name}
+                            {isUnavailable && (
+                              <span className="text-[9px] uppercase tracking-wider text-amber-400 font-semibold px-1.5 py-0.5 rounded bg-amber-400/10 border border-amber-400/30">
+                                Not Available
+                              </span>
+                            )}
+                          </div>
                           <div className="text-[11px] text-slate-400">{addon.desc}</div>
                         </div>
                       </div>
                       <span className="text-xs font-extrabold text-[#1FD1B2] ml-2 flex-shrink-0">
-                        {addon.price}
+                        {isUnavailable ? '—' : addon.price}
                       </span>
                     </div>
                   );

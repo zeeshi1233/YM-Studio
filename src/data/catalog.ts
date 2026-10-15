@@ -6,6 +6,16 @@ export type CategorySlug =
   | 'henna'
   | 'beauty-education';
 
+export interface StepBreakdownItem {
+  step: string;
+  detail: string;
+}
+
+export interface TargetOptionItem {
+  title: string;
+  desc: string;
+}
+
 export interface ServiceDetail {
   id: string;
   slug: string;
@@ -18,11 +28,18 @@ export interface ServiceDetail {
   image: string;
   popular?: boolean;
   unavailable?: boolean;
+  unavailableReason?: string;
   tags?: string[];
   includes?: string[];
   duration?: string;
   /** Tailwind object-position class so faces stay visible in cover crops */
   imageFocus?: string;
+  treatmentTime?: string;
+  downtime?: string;
+  bestFor?: string;
+  keyBenefits?: string[];
+  stepBreakdown?: StepBreakdownItem[];
+  targetOptions?: TargetOptionItem[];
 }
 
 export interface ServiceCategory {
@@ -52,46 +69,99 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     accent: '#1FD1B2',
     services: [
       {
+        id: 'natural-soft-glam',
+        slug: 'natural-soft-glam',
+        name: 'Natural & Soft Glam',
+        subtitle: 'Natural, everyday, and soft glam makeup',
+        description:
+          'Natural, everyday, and soft glam makeup designed to elevate your features with an effortless, glowing finish.',
+        longDescription:
+          'Luminous skin, soft neutral tones, feathered brows, and fluttery lashes. Perfect for everyday confidence, daytime celebrations, work events, or effortless evening elegance.',
+        price: '$95',
+        image: '/images/services/svc-soft-glam.jpg',
+        imageFocus: 'object-[50%_50%]',
+        popular: true,
+        tags: ['Natural', 'Everyday', 'Soft Glam'],
+        includes: ['Skin prep & hydration', 'Luminous skin finish', 'Soft neutral eye design', 'Lash application option'],
+      },
+      {
+        id: 'party-special-occasion',
+        slug: 'party-special-occasion',
+        name: 'Party & Special Occasion',
+        subtitle: 'Party, birthday, formal, evening makeup and corporate events',
+        description:
+          'Party, birthday, formal, evening makeup and corporate events with sculpted complexion and radiant, camera-ready eyes.',
+        longDescription:
+          'Striking, sophisticated artistry featuring sculpted complexion, radiant eyes, seamless contouring, and camera-ready finishing built to last through dinner, dancing, and high-flash photography.',
+        price: '$220',
+        image: '/images/services/svc-party-makeup.jpg',
+        imageFocus: 'object-[center_22%]',
+        popular: true,
+        tags: ['Party', 'Birthdays', 'Formals', 'Corporate Events'],
+        includes: ['HD complexion sculpting', 'Statement eye design', 'Custom lash application', 'All-night setting finish'],
+      },
+      {
         id: 'bridal-makeup',
         slug: 'bridal-makeup',
-        name: 'Bridal Beauty',
-        subtitle: 'Your dream bridal look for your special day',
+        name: 'Bridal Makeup',
+        subtitle: 'Bridal, engagement, and bridal party',
         description:
-          'Bespoke HD bridal artistry engineered to photograph flawlessly and last 16+ hours. Includes skin prep, custom lashes and touch-up guidance.',
+          'Bespoke HD bridal artistry engineered to photograph flawlessly and last 16+ hours. Tailored for brides, engagements, and bridal parties.',
         longDescription:
           'From soft romantic bridal to full glam, we design a look that feels like you — waterproof, camera-ready and timed for your wedding schedule. Mobile bridal beauty available across Melbourne & Victoria.',
         price: 'Custom Quote',
         image: '/images/services/svc-bridal-makeup.jpg',
         imageFocus: 'object-[50%_18%]',
         popular: true,
-        tags: ['Bridal', 'Mobile available'],
+        tags: ['Bridal', 'Engagement', 'Bridal Party', 'Mobile available'],
         includes: ['Premium skin prep', 'Custom lash application', 'Long-wear HD finish', 'Touch-up protocol'],
       },
       {
-        id: 'event-glam',
-        slug: 'event-glam',
-        name: 'Statement Looks for Every Occasion',
-        subtitle: 'Bold, glamorous & camera-ready',
+        id: 'photoshoot-editorial',
+        slug: 'photoshoot-editorial',
+        name: 'Photoshoot & Editorial',
+        subtitle: 'Photoshoots, fashion, portfolios, and personal branding',
         description:
-          'Striking, sophisticated looks for galas, birthdays and formal events with sculpted complexion and radiant eyes.',
-        price: '$220',
-        image: '/images/services/svc-statement-look.jpg',
-        imageFocus: 'object-[center_18%]',
-        popular: true,
-        tags: ['Events'],
+          'Photoshoots, fashion, portfolios, and personal branding (get the quote). Engineered for studio flash and high-definition photography.',
+        longDescription:
+          'Engineered specifically for camera lighting, studio flash, and high-resolution digital lenses. Texture-less complexion, crisp contouring, and artistic balance for agency portfolios, commercial campaigns, and personal branding shoots. Get a quote for half-day or full-day shoot bookings.',
+        price: 'Custom Quote',
+        priceNote: 'Get the quote for half-day / full-day shoots',
+        image: '/images/IMG-20261014-WA0051.jpg',
+        imageFocus: 'object-[center_25%]',
+        tags: ['Photoshoots', 'Fashion', 'Portfolios', 'Personal Branding'],
+        includes: ['Studio lighting calibrated base', 'On-set touchup readiness', 'High-definition finish', 'Concept styling alignment'],
       },
       {
-        id: 'party-makeup',
-        slug: 'party-makeup',
-        name: 'Party Glam',
-        subtitle: 'Bold glam for nights out',
+        id: 'eye-makeup-only',
+        slug: 'eye-makeup-only',
+        name: 'Eye Makeup Only',
+        subtitle: 'Graphic liners, eyemakeup, photoshoot eye makeup, eye enhancement',
         description:
-          'High-impact party glam with statement eyes, sculpted complexion and long-wear colour that photographs beautifully.',
-        price: '$220',
-        image: '/images/services/svc-party-makeup.jpg',
-        imageFocus: 'object-[center_22%]',
+          'Graphic liners, eyemakeup, photoshoot eye makeup, and eye enhancement for an expressive, high-impact gaze.',
+        longDescription:
+          'Focus purely on your eyes. Whether you want sharp graphic wings, smoky halo eyes, glitter cut creases, or photoshoot-ready lash & liner enhancements — sculpted to complement your eye shape.',
+        price: '$70',
+        image: '/images/IMG-20261014-WA0050.jpg',
+        imageFocus: 'object-[center_30%]',
         popular: true,
-        tags: ['Party', 'Events'],
+        tags: ['Graphic Liners', 'Eye Makeup', 'Photoshoot Eyes', 'Eye Enhancement'],
+        includes: ['Eye primer & base prep', 'Custom eye shadow design', 'Precision eyeliner styling', 'Lash application'],
+      },
+      {
+        id: 'makeup-lessons-education',
+        slug: 'makeup-lessons-education',
+        name: 'Makeup Lessons & Education',
+        subtitle: 'Personal lessons, beginner classes, and masterclasses',
+        description:
+          'Personal lessons, beginner classes, and masterclasses. Hands-on learning tailored to your skill level.',
+        longDescription:
+          'Step into YM Studios Academy. Learn how to master everyday makeup, proper brush handling, foundation shade matching, or train professionally for bridal and party clients. Online and face-to-face coaching with a YM Studios Certificate of Completion.',
+        price: 'From $50',
+        priceNote: 'Personal lessons from $50 · Masterclasses available',
+        image: '/images/services/svc-edu-beginners.png',
+        tags: ['Lessons', 'Beginner Classes', 'Masterclasses', 'Academy'],
+        includes: ['Hands-on coaching', 'Brush & product guidance', 'Personalized step-by-step', 'Certificate of Completion'],
       },
       {
         id: 'girls-makeup',
@@ -106,18 +176,6 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         image: '/images/services/svc-girls-makeup.png',
         tags: ['Under 16', 'Soft glam'],
         includes: ['Age-appropriate products', 'Soft natural finish', 'Light lash option if suitable'],
-      },
-      {
-        id: 'soft-glam',
-        slug: 'soft-glam',
-        name: 'Soft Glam',
-        subtitle: 'Ethereal, luminous elegance',
-        description:
-          'Soft blended neutrals, feathered brows and fluttery lashes that elevate natural features with a luminous glow.',
-        price: '$95',
-        image: '/images/services/svc-soft-glam.jpg',
-        imageFocus: 'object-[50%_50%]',
-        tags: ['Soft glam'],
       },
       {
         id: 'addon-lashes',
@@ -248,109 +306,219 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     name: 'Skin Treatments & Facials',
     shortName: 'Skin',
     navLabel: 'Skin',
-    tagline: 'HydraFacial, peels & clinical glow',
+    tagline: 'Hydrodermabrasion, customized facials & clinical glow',
     description:
-      'Deep cleansing facials, HydraFacial, microdermabrasion, peels, LED therapy and clinical add-ons. Free 10-minute skin consultation with any facial.',
+      'Hydrodermabrasion, microdermabrasion, chemical peels, classic European & customized facials. Free 10-minute skin consultation with any facial.',
     image: '/images/services/svc-hydra.png',
     accent: '#1FD1B2',
     services: [
       {
-        id: 'hydra-infusion',
-        slug: 'hydra-facial',
-        name: 'Hydra-Infusion / Hydro-Dermabrasion',
-        subtitle: 'Deep cleanse, hydrate & serum infusion',
+        id: 'hydrodermabrasion',
+        slug: 'hydrodermabrasion',
+        name: 'Hydrodermabrasion',
+        subtitle: 'Gentle exfoliation & serum-infusion treatment',
         description:
-          'Multi-step clinical treatment that cleanses, exfoliates, extracts and infuses serums for glass-skin results with zero downtime.',
+          'An advanced, gentle exfoliation and serum-infusion treatment that deeply cleanses pores and delivers maximum hydration for radiant skin.',
+        longDescription:
+          'Hydrodermabrasion combines gentle suction with fluid infusion to gently dislodge blackheads, clear congested pores, and saturate thirsty skin with concentrated hyaluronic acid, botanical extracts, and antioxidant serums. Ideal for immediate glass-skin results with no downtime.',
         price: 'From $65',
         priceNote: '30 min $65 · 1 hr $85',
         duration: '30–60 min',
+        treatmentTime: '30-60 minutes',
+        bestFor: 'All skin types, including sensitive and dry skin.',
+        downtime: 'No downtime',
+        keyBenefits: [
+          'Deeply hydrates',
+          'Unclogs & tightens pores',
+          'Smooths texture',
+          'Plumps & brightens',
+        ],
         image: '/images/services/svc-hydra.png',
         popular: true,
-        tags: ['Clinical'],
+        tags: ['Clinical', 'Hydration', 'Pore Cleansing'],
       },
       {
         id: 'microdermabrasion',
         slug: 'microdermabrasion',
-        name: 'Diamond Microdermabrasion',
-        subtitle: 'Diamond-tip resurfacing',
-        description: 'Polishes away dead cells to refine texture, dullness and fine lines.',
+        name: 'Microdermabrasion',
+        subtitle: 'Advanced physical resurfacing for smooth healthy skin',
+        description:
+          'An advanced physical exfoliation treatment designed to resurface skin, clear pores, and restore a smooth, healthy glow.',
+        longDescription:
+          'Using specialized precision exfoliation with vacuum suction, this treatment polishes away dead epidermal layers, stimulates cellular turnover, unclogs stubborn pores, and leaves the complexion velvety smooth with an instant glow.',
         price: 'From $65',
         priceNote: '30 min $65 · 1 hr $85',
-        duration: '30–60 min',
+        duration: '30–45 min',
+        treatmentTime: '30-45 minutes',
+        downtime: 'None (majority clients see instant glow)',
+        keyBenefits: [
+          'Smooths texture',
+          'Unclogs pores',
+          'Brightens dull skin',
+          'Enhances product absorption',
+        ],
         image: '/images/services/svc-microderm.png',
-        tags: ['Clinical'],
+        popular: true,
+        tags: ['Clinical', 'Physical Exfoliation', 'Instant Glow'],
       },
       {
-        id: 'chemical-peels',
-        slug: 'chemical-peels',
-        name: 'Chemical Peels (AHA / BHA / TCA)',
-        subtitle: 'Targeted cellular renewal',
-        description: 'Custom acid peels for pigmentation, breakouts and collagen turnover.',
+        id: 'chemical-peel',
+        slug: 'chemical-peel',
+        name: 'Chemical Peel',
+        subtitle: 'Targeted acid solutions for balanced, glowing skin',
+        description:
+          'An advanced exfoliating treatment that removes dead skin cells to restore a youthful, glowing, and balanced skin tone.',
+        longDescription:
+          'Customizable medical-grade acid formulations applied to break down dead cellular buildup, stimulate rapid collagen renewal, reduce fine lines, and clear active breakouts without harsh irritation.',
         price: '$90',
         duration: '30–45 min',
+        treatmentTime: '30-45 minutes',
+        downtime: 'None to mild flaking (depending on peel strength)',
+        keyBenefits: [
+          'Smooths texture',
+          'Evens skin tone',
+          'Reduces fine lines & breakouts',
+        ],
         image: '/images/services/svc-chem-peel.png',
+        tags: ['Clinical', 'Chemical Exfoliation', 'Cellular Renewal'],
       },
       {
         id: 'led-light-therapy',
         slug: 'led-light-therapy',
-        name: 'LED Light Therapy Facial',
-        subtitle: 'Blue & red light regeneration',
-        description: 'Purifying blue light and anti-aging red/NIR light therapy.',
+        name: 'LED Light Therapy',
+        subtitle: 'Soothe inflammation, fight bacteria & boost collagen',
+        description:
+          'A gentle, light-based treatment designed to soothe inflammation, fight acne-causing bacteria, and boost collagen production.',
+        longDescription:
+          'Emits medical-grade therapeutic wavelengths to calm redness, eradicate blemish-causing bacteria, and energize collagen fibroblasts at the cellular level with zero downtime.',
         price: '$45',
-        duration: '30–40 min',
+        duration: '20–30 min',
+        treatmentTime: '20-30 minutes',
+        downtime: 'No downtime',
+        bestFor: 'All skin types, including sensitive and acne-prone skin.',
+        keyBenefits: [
+          'Calms inflammation',
+          'Fights acne',
+          'Boosts collagen',
+        ],
+        unavailable: true,
+        unavailableReason: 'Currently Not Available',
         image: '/images/services/svc-led.png',
-      },
-      {
-        id: 'classic-european',
-        slug: 'classic-european-facial',
-        name: 'Classic European Facial',
-        subtitle: 'Deep relaxation and skin health',
-        description: 'Dual cleanse, exfoliation, extractions, massage and customised mask.',
-        price: '$50',
-        duration: '45 min',
-        image: '/images/services/svc-euro-facial.png',
-        popular: true,
+        tags: ['Currently Not Available', 'Light Therapy'],
       },
       {
         id: 'basic-3-steps',
         slug: 'basic-3-step-facial',
         name: 'Basic 3-Step Facial',
-        subtitle: 'Essential skin reset',
-        description: 'Deep cleanse, gentle exfoliation and hydrating or detox mask.',
+        subtitle: 'Deep cleanse, gentle exfoliation & hydrating finish',
+        description:
+          'An essential treatment consisting of a deep cleanse, gentle exfoliation, and a hydrating finish for fresh, radiant skin.',
+        longDescription:
+          'Concentrated express care designed for busy schedules or monthly maintenance. Combines thorough deep cleansing, gentle pore-clearing exfoliation, and a nourishing moisture seal with SPF protection.',
         price: '$35',
-        duration: '40 min',
+        duration: '30 min',
+        treatmentTime: '30 minutes',
+        bestFor: 'All skin types, first-timers, or monthly maintenance.',
+        keyBenefits: [
+          'Purifies skin',
+          'Smooths texture',
+          'Restores natural hydration',
+          'Quick & convenient',
+        ],
+        stepBreakdown: [
+          {
+            step: 'Cleanse',
+            detail: 'Removes makeup, oil, and surface impurities.',
+          },
+          {
+            step: 'Exfoliate',
+            detail: 'Gently polishes away dead skin cells for a smooth texture.',
+          },
+          {
+            step: 'Hydrate & Protect',
+            detail: 'Infuses moisture and locks it in with a nourishing moisturizer and SPF.',
+          },
+        ],
         image: '/images/services/svc-basic-facial.png',
+        tags: ['Express', 'First-Timers', 'Maintenance'],
       },
       {
-        id: 'face-lift-aroma',
-        slug: 'face-lift-aroma-facial',
-        name: 'Face Lift Aroma Massage Facial',
-        subtitle: 'Lifting massage & aromatherapy',
-        description: 'Sculpting facial massage with botanicals for lymphatic drainage and glow.',
+        id: 'classic-european',
+        slug: 'classic-european-facial',
+        name: 'Classic European Facial',
+        subtitle: 'Deep pore cleansing, extractions & relaxing massage',
+        description:
+          'A comprehensive facial featuring deep pore cleansing, exfoliation, extractions, customized masking, and a relaxing massage.',
+        longDescription:
+          'A comprehensive European staple combining purifying warmth, steam, thorough decongestion, therapeutic pressure-point massage, and targeted masking to refresh the skin, relieve facial tension, and restore optimal hydration.',
         price: '$100',
-        duration: '45–60 min',
+        duration: '50–60 min',
+        treatmentTime: '50-60 minutes',
+        bestFor: 'All skin types, routine skin health, and stress relief.',
+        keyBenefits: [
+          'Deeply purifies pores',
+          'Relieves facial tension',
+          'Hydrates & restores balance',
+          'Promotes circulation',
+        ],
+        stepBreakdown: [
+          {
+            step: 'Deep Cleanse & Steam',
+            detail: 'Purifies pores and softens the skin.',
+          },
+          {
+            step: 'Exfoliation & Extractions',
+            detail: 'Removes dead skin cells and clears out clogged pores.',
+          },
+          {
+            step: 'Massage & Mask',
+            detail: 'Relieves facial tension while targeted serums and masks restore hydration and balance.',
+          },
+        ],
+        image: '/images/services/svc-euro-facial.png',
+        popular: true,
+        tags: ['Relaxation', 'Deep Cleanse', 'Routine Health'],
+      },
+      {
+        id: 'customized-facial',
+        slug: 'customized-facial',
+        name: 'Customized Facial',
+        subtitle: 'Fully tailored treatment for your specific skin concerns',
+        description:
+          'A fully tailored treatment designed to target your specific concerns, including acne, seasonal weather damage, anti-aging, and overall skin rejuvenation.',
+        longDescription:
+          'A 100% personalized treatment customized after a thorough professional consultation. Whether you are dealing with seasonal weather changes, active congestion, premature fine lines, or dullness, our therapist selects targeted actives, specialized masks, and clinical massage techniques to achieve long-term skin health.',
+        price: '$100',
+        duration: '60 min',
+        treatmentTime: '60 minutes',
+        bestFor: 'All skin types and concerns (ideal for changing seasons or unpredictable skin).',
+        keyBenefits: [
+          '100% personalized',
+          'Targets specific skin concerns',
+          'Restores balance & hydration',
+          'Promotes long-term skin health',
+        ],
+        targetOptions: [
+          {
+            title: 'Weather & Seasonal Care',
+            desc: 'Restores barrier function and combats dryness or excessive sun exposure.',
+          },
+          {
+            title: 'Acne & Clarity',
+            desc: 'Deeply cleanses pores, calms inflammation, and prevents future breakouts.',
+          },
+          {
+            title: 'Anti-Aging & Firming',
+            desc: 'Smooths fine lines, improves elasticity, and promotes cellular renewal.',
+          },
+          {
+            title: 'Youthful Rejuvenation',
+            desc: 'Restores dull, tired skin to reveal a vibrant, healthy radiance.',
+          },
+        ],
         image: '/images/services/svc-aroma-lift.png',
         popular: true,
-      },
-      {
-        id: 'acne-clarifying',
-        slug: 'acne-clarifying-facial',
-        name: 'Acne-Clarifying Clinical Facial',
-        subtitle: 'For congested & blemish-prone skin',
-        description: 'Ultrasonic extractions, high-frequency and calming actives for acne-prone skin.',
-        price: '$80',
-        duration: '45 min',
-        image: '/images/services/svc-acne.png',
-      },
-      {
-        id: 'anti-aging-firming',
-        slug: 'anti-aging-firming-facial',
-        name: 'Anti-Aging Firming & Peptide Facial',
-        subtitle: 'Elasticity and peptide infusion',
-        description: 'Peptide serums, Gua Sha and collagen-firming mask to tone and restore.',
-        price: '$100',
-        duration: '45 min',
-        image: '/images/services/svc-antiaging.png',
+        tags: ['100% Personalized', 'Targeted Options', 'Bespoke'],
       },
     ],
   },
@@ -583,17 +751,36 @@ export const CERTIFICATE_DISCLAIMER =
 export const getCategoryBySlug = (slug: string) =>
   SERVICE_CATEGORIES.find((c) => c.slug === slug);
 
+const SERVICE_SLUG_ALIASES: Record<string, string> = {
+  'diamond-microdermabrasion': 'microdermabrasion',
+  'hydra-facial': 'hydrodermabrasion',
+  'hydra-infusion': 'hydrodermabrasion',
+  'chemical-peels': 'chemical-peel',
+  'face-lift-aroma-facial': 'customized-facial',
+  'acne-clarifying-facial': 'customized-facial',
+  'anti-aging-firming-facial': 'customized-facial',
+  'event-glam': 'party-special-occasion',
+  'party-makeup': 'party-special-occasion',
+  'soft-glam': 'natural-soft-glam',
+};
+
 export const getServiceBySlug = (categorySlug: string, serviceSlug: string) => {
   const category = getCategoryBySlug(categorySlug);
   if (!category) return null;
-  const service = category.services.find((s) => s.slug === serviceSlug);
+  const targetSlug = SERVICE_SLUG_ALIASES[serviceSlug] || serviceSlug;
+  const service =
+    category.services.find((s) => s.slug === targetSlug) ||
+    category.services.find((s) => s.slug === serviceSlug);
   if (!service) return null;
   return { category, service };
 };
 
 export const findServiceEverywhere = (serviceSlug: string) => {
+  const targetSlug = SERVICE_SLUG_ALIASES[serviceSlug] || serviceSlug;
   for (const category of SERVICE_CATEGORIES) {
-    const service = category.services.find((s) => s.slug === serviceSlug);
+    const service =
+      category.services.find((s) => s.slug === targetSlug) ||
+      category.services.find((s) => s.slug === serviceSlug);
     if (service) return { category, service };
   }
   return null;

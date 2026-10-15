@@ -36,15 +36,15 @@ const OFFERINGS = [
   },
   {
     icon: Crown,
-    title: 'Bridal Beauty',
+    title: 'Bridal Makeup',
     desc: 'Your dream look for your special day.',
     to: '/category/makeup/bridal-makeup',
   },
   {
     icon: PartyPopper,
-    title: 'Statement Looks for Every Occasion',
+    title: 'Party & Special Occasion',
     desc: 'Glamorous, elegant & camera-ready.',
-    to: '/category/makeup/event-glam',
+    to: '/category/makeup/party-special-occasion',
   },
 ];
 

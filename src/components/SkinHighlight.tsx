@@ -8,10 +8,10 @@ interface SkinHighlightProps {
 }
 
 const SKIN_OFFERS = [
-  { icon: Droplets, title: 'HydraFacial', desc: 'Deep Cleansing & Hydration', service: 'Skin Treatment: Hydra-Infusion / Hydro-Dermabrasion' },
-  { icon: Sparkles, title: 'Microdermabrasion', desc: 'Smoother, Brighter Skin', service: 'Skin Treatment: Diamond Microdermabrasion' },
-  { icon: HeartPulse, title: 'Skin Rejuvenation', desc: 'Revive & Glow', service: 'Facial: Classic European Facial' },
-  { icon: Flower2, title: 'Custom Facials', desc: 'Tailored to your skin', service: 'Facial: Customised Face Lift Aroma Massage Facial' },
+  { icon: Droplets, title: 'Hydrodermabrasion', desc: 'Deep Cleansing & Hydration', service: 'Skin Treatment: Hydrodermabrasion' },
+  { icon: Sparkles, title: 'Microdermabrasion', desc: 'Physical Resurfacing & Smooth Skin', service: 'Skin Treatment: Microdermabrasion' },
+  { icon: HeartPulse, title: 'Classic European Facial', desc: 'Pore Purification & Relaxation', service: 'Facial: Classic European Facial' },
+  { icon: Flower2, title: 'Customized Facial', desc: 'Tailored to your unique concerns', service: 'Facial: Customized Facial' },
   { icon: ClipboardList, title: 'Skin Consultation', desc: 'Personalised care plan', service: null },
 ];
 
@@ -47,7 +47,7 @@ export const SkinHighlight: React.FC<SkinHighlightProps> = ({
                 </span>
               </h2>
               <p className="mt-4 text-sm text-[#94A3B8] max-w-md leading-relaxed">
-                Clinical treatments and custom facials designed for glass-skin radiance — from HydraFacial
+                Clinical treatments and custom facials designed for glass-skin radiance — from Hydrodermabrasion
                 to personalised consultations.
               </p>
             </motion.div>
@@ -90,7 +90,7 @@ export const SkinHighlight: React.FC<SkinHighlightProps> = ({
           >
             <img
               src="/images/skin-treatment-sharp.png"
-              alt="HydraFacial beauty and skin treatment at YM Studios Melbourne"
+              alt="Hydrodermabrasion beauty and skin treatment at YM Studios Melbourne"
               width={1200}
               height={900}
               className="absolute inset-0 w-full h-full object-cover object-center"
@@ -104,7 +104,7 @@ export const SkinHighlight: React.FC<SkinHighlightProps> = ({
               </p>
               <button
                 type="button"
-                onClick={() => onSelectService('Skin Treatment: Hydra-Infusion / Hydro-Dermabrasion')}
+                onClick={() => onSelectService('Skin Treatment: Hydrodermabrasion')}
                 className="shrink-0 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0B0C10] bg-[#1FD1B2] hover:shadow-[0_0_25px_rgba(31,209,178,0.45)] transition-all cursor-pointer"
               >
                 Book Skin Care
