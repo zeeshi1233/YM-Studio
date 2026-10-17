@@ -32,8 +32,8 @@ function HomePage({
     <OverlappingScrollHero
       hero={<Hero onOpenBooking={() => onBook()} onOpenConsultation={onConsult} />}
     >
-      <CategoryGrid />
-      <HennaHighlight onEnquire={() => onBook('Henna & Mehndi', 'Interested in henna / mehndi booking')} />
+      <CategoryGrid onBook={(svc, details) => onBook(svc, details)} />
+      <HennaHighlight onEnquire={() => onBook('Henna Services', 'Interested in henna services booking')} />
       <Academy
         onOpenTrainingEnquiry={() =>
           onBook('Beauty Education / Academy', 'Interested in YM Studios makeup training courses')

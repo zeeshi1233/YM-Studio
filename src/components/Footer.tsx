@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MapPin, Instagram, Facebook, Phone, ArrowUp, ExternalLink } from 'lucide-react';
 import { YMLogo } from './YMLogo';
 
@@ -59,39 +60,39 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs text-slate-400">
               <li>
-                <a href="/category/makeup" className="hover:text-[#1FD1B2] transition-colors">
+                <Link to="/category/makeup" className="hover:text-[#1FD1B2] transition-colors">
                   Makeup Artistry & Bridal Glam
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/category/lash-brow-waxing" className="hover:text-[#F472B6] transition-colors">
-                  Lash, Brow & Precision Waxing
-                </a>
+                <Link to="/category/brow-lamination-waxing" className="hover:text-[#F472B6] transition-colors">
+                  Brow Lamination and Waxing
+                </Link>
               </li>
               <li>
-                <a href="/category/skin" className="hover:text-[#1FD1B2] transition-colors">
+                <Link to="/category/skin" className="hover:text-[#1FD1B2] transition-colors">
                   Skin Treatments & Facials
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/category/henna" className="hover:text-[#D4AF37] transition-colors">
-                  Henna & Mehndi Artistry
-                </a>
+                <Link to="/category/henna" className="hover:text-[#D4AF37] transition-colors">
+                  Henna Services & Mehndi Artistry
+                </Link>
               </li>
               <li>
-                <a href="/category/hair" className="hover:text-[#1FD1B2] transition-colors">
-                  Hair Styling, Cuts & Updos
-                </a>
+                <Link to="/category/hair" className="hover:text-[#1FD1B2] transition-colors">
+                  Hair Styles and Cuts
+                </Link>
               </li>
               <li>
-                <a href="/category/beauty-education" className="hover:text-[#B829A0] transition-colors">
+                <Link to="/category/beauty-education" className="hover:text-[#B829A0] transition-colors">
                   Beauty Education / Academy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#social-qr-section" className="hover:text-[#1FD1B2] transition-colors">
+                <Link to="/#social-qr-section" className="hover:text-[#1FD1B2] transition-colors">
                   Social QR Codes
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

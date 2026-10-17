@@ -11,6 +11,9 @@ import {
   Droplets,
   Crown,
   PartyPopper,
+  Eye,
+  Flower2,
+  Scissors,
 } from 'lucide-react';
 import { YMLogo } from './YMLogo';
 import { MakeupAtmosphere } from './MakeupAtmosphere';
@@ -46,12 +49,32 @@ const OFFERINGS = [
     desc: 'Glamorous, elegant & camera-ready.',
     to: '/category/makeup/party-special-occasion',
   },
+  {
+    icon: Eye,
+    title: 'Brow Lamination and Waxing',
+    desc: 'Laminated brows, tinting & precision face & body waxing.',
+    to: '/category/brow-lamination-waxing',
+  },
+  {
+    icon: Flower2,
+    title: 'Henna Services',
+    desc: 'Handcrafted bridal mehndi, sangeet & bespoke guest henna.',
+    to: '/category/henna',
+  },
+  {
+    icon: Scissors,
+    title: 'Hair Styles and Cuts',
+    desc: 'Straight & sleek, Hollywood curls, updos & style cuts.',
+    to: '/category/hair',
+  },
 ];
 
 const PILLARS = [
   { label: 'Makeup', to: '/category/makeup' },
-  { label: 'Skin', to: '/category/skin' },
+  { label: 'Brow & Waxing', to: '/category/brow-lamination-waxing' },
   { label: 'Henna', to: '/category/henna' },
+  { label: 'Hair Styles', to: '/category/hair' },
+  { label: 'Skin', to: '/category/skin' },
   { label: 'Academy', to: '/category/beauty-education' },
 ];
 
@@ -183,7 +206,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenConsultation })
                     key={item.title}
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.45, delay: 0.42 + index * 0.07 }}
+                    transition={{ duration: 0.45, delay: 0.42 + index * 0.05 }}
+                    className={index === OFFERINGS.length - 1 ? 'sm:col-span-2' : ''}
                   >
                     <Link to={item.to} className="flyer-offer-row text-left cursor-pointer">
                       <span className="flyer-gold-ring">

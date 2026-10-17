@@ -100,40 +100,44 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenConsultatio
             )}
           </div>
 
+          <Link
+            to="/category/brow-lamination-waxing"
+            className="px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium text-slate-300 hover:text-[#B829A0] transition-colors whitespace-nowrap"
+          >
+            Brow Lamination & Waxing
+          </Link>
+          <Link
+            to="/category/henna"
+            className="px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium text-slate-300 hover:text-[#D4AF37] transition-colors whitespace-nowrap"
+          >
+            Henna Services
+          </Link>
+          <Link
+            to="/category/hair"
+            className="px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium text-slate-300 hover:text-[#1FD1B2] transition-colors whitespace-nowrap"
+          >
+            Hair Styles & Cuts
+          </Link>
           <button
             type="button"
             onClick={() => goHomeSection('academy-section')}
-            className="px-3 py-2 text-xs xl:text-sm font-medium text-slate-300 hover:text-[#F472B6] inline-flex items-center gap-1.5 cursor-pointer"
+            className="px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium text-slate-300 hover:text-[#F472B6] inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#B829A0]" /> Academy
           </button>
           <button
             type="button"
-            onClick={() => goHomeSection('henna-section')}
-            className="px-3 py-2 text-xs xl:text-sm font-medium text-slate-300 hover:text-[#D4AF37] cursor-pointer"
-          >
-            Henna
-          </button>
-          <button
-            type="button"
             onClick={() => goHomeSection('quote-calculator-section')}
-            className="px-3 py-2 text-xs xl:text-sm font-medium text-slate-300 hover:text-[#1FD1B2] cursor-pointer"
+            className="px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium text-slate-300 hover:text-[#1FD1B2] cursor-pointer whitespace-nowrap"
           >
             Packages
           </button>
           <button
             type="button"
             onClick={() => goHomeSection('booking-section')}
-            className="px-3 py-2 text-xs xl:text-sm font-medium text-slate-300 hover:text-[#1FD1B2] cursor-pointer"
+            className="px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium text-slate-300 hover:text-[#1FD1B2] cursor-pointer whitespace-nowrap"
           >
             Contact
-          </button>
-          <button
-            type="button"
-            onClick={() => goHomeSection('social-qr-section')}
-            className="px-3 py-2 text-xs xl:text-sm font-medium text-slate-300 hover:text-[#1FD1B2] cursor-pointer"
-          >
-            Socials
           </button>
         </nav>
 
