@@ -9,7 +9,6 @@ import {
   Heart,
   Brush,
   Droplets,
-  Crown,
   PartyPopper,
   Eye,
   Flower2,
@@ -36,12 +35,6 @@ const OFFERINGS = [
     title: 'Skin & Beauty',
     desc: 'Healthy, glowing skin is always in.',
     to: '/category/skin',
-  },
-  {
-    icon: Crown,
-    title: 'Bridal Makeup',
-    desc: 'Your dream look for your special day.',
-    to: '/category/makeup/bridal-makeup',
   },
   {
     icon: PartyPopper,
@@ -207,7 +200,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenConsultation })
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.45, delay: 0.42 + index * 0.05 }}
-                    className={index === OFFERINGS.length - 1 ? 'sm:col-span-2' : ''}
+                    className={OFFERINGS.length % 2 !== 0 && index === OFFERINGS.length - 1 ? 'sm:col-span-2' : ''}
                   >
                     <Link to={item.to} className="flyer-offer-row text-left cursor-pointer">
                       <span className="flyer-gold-ring">
