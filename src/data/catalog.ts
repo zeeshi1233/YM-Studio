@@ -850,7 +850,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
           'Build foundational skills across complexion, colour matching, eyes, brows and lasting makeup — with a YM Studios Certificate of Completion included.',
         price: 'From $80',
         priceNote: 'Online from $80 · Face-to-Face from $100',
-        image: '/images/services/svc-edu-beginners.png',
+        image: '/WhatsApp Image 2026-11-06 at 3.10.41 AM.jpeg',
         popular: true,
         tags: ['Certificate included'],
         includes: ['Certificate of Completion', 'Tools & product knowledge', 'Foundation skill building'],
