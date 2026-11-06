@@ -9,7 +9,6 @@ import {
   Heart,
   Brush,
   Droplets,
-  PartyPopper,
   Eye,
   Flower2,
   Scissors,
@@ -35,12 +34,6 @@ const OFFERINGS = [
     title: 'Skin & Beauty',
     desc: 'Healthy, glowing skin is always in.',
     to: '/category/skin',
-  },
-  {
-    icon: PartyPopper,
-    title: 'Party & Special Occasion',
-    desc: 'Glamorous, elegant & camera-ready.',
-    to: '/category/makeup/party-special-occasion',
   },
   {
     icon: Eye,

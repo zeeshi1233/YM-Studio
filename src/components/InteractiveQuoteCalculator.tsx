@@ -15,10 +15,10 @@ const BASE_OPTIONS = [
   { id: 'classic-euro', name: 'Classic European Facial', duration: 60, price: 100, category: 'Facial' },
   { id: 'basic-3step', name: 'Basic 3-Step Facial', duration: 30, price: 35, category: 'Facial' },
   { id: 'custom-facial', name: 'Customized Facial', duration: 60, price: 100, category: 'Facial' },
-  { id: 'party-glam', name: 'Party & Special Occasion', duration: 60, price: 220, category: 'Makeup' },
+  { id: 'party-glam', name: 'Party & Special Occasion', duration: 60, price: 120, category: 'Makeup' },
   { id: 'natural-soft', name: 'Natural & Soft Glam', duration: 50, price: 95, category: 'Makeup' },
   { id: 'eye-makeup', name: 'Eye Makeup Only', duration: 35, price: 70, category: 'Makeup' },
-  { id: 'girls-makeup', name: 'Girls (Under 16)', duration: 50, price: 150, category: 'Makeup' },
+  { id: 'girls-makeup', name: 'Girls (Under 16)', duration: 50, price: 85, category: 'Makeup' },
 ];
 
 export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProps> = ({

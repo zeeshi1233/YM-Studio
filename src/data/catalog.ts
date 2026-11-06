@@ -94,7 +94,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
           'Party, birthday, formal, evening makeup and corporate events with sculpted complexion and radiant, camera-ready eyes.',
         longDescription:
           'Striking, sophisticated artistry featuring sculpted complexion, radiant eyes, seamless contouring, and camera-ready finishing built to last through dinner, dancing, and high-flash photography.',
-        price: '$220',
+        price: '$120',
         image: '/images/services/svc-party-makeup.jpg',
         imageFocus: 'object-[center_22%]',
         popular: true,
@@ -160,7 +160,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
           'Step into YM Studios Academy. Learn how to master everyday makeup, proper brush handling, foundation shade matching, or train professionally for bridal and party clients. Online and face-to-face coaching with a YM Studios Certificate of Completion.',
         price: 'From $50',
         priceNote: 'Personal lessons from $50 · Masterclasses available',
-        image: '/images/services/svc-edu-beginners.png',
+        image: '/WhatsApp Image 2026-11-06 at 3.10.41 AM.jpeg',
         tags: ['Lessons', 'Beginner Classes', 'Masterclasses', 'Academy'],
         includes: ['Hands-on coaching', 'Brush & product guidance', 'Personalized step-by-step', 'Certificate of Completion'],
       },
@@ -173,7 +173,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
           'Gentle, youthful looks tailored for girls under 16 — soft, polished and camera-ready for parties, formals and special occasions.',
         longDescription:
           'A thoughtful, age-appropriate look designed for younger clients. Soft complexion, light definition and natural glow — perfect for school formals, birthdays and family celebrations.',
-        price: '$150',
+        price: '$85',
         image: '/images/services/svc-girls-makeup.png',
         tags: ['Under 16', 'Soft glam'],
         includes: ['Age-appropriate products', 'Soft natural finish', 'Light lash option if suitable'],
@@ -821,7 +821,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     tagline: 'Learn makeup. Build confidence. Elevate your skills.',
     description:
       'Practical, hands-on makeup training for beginners, beauty enthusiasts and aspiring artists. Online and face-to-face options with a YM Studios Certificate of Completion.',
-    image: '/images/services/svc-edu-beginners.png',
+    image: '/WhatsApp Image 2026-11-06 at 3.10.41 AM.jpeg',
     accent: '#F472B6',
     services: [
       {

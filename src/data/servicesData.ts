@@ -14,7 +14,7 @@ export const MAKEUP_SERVICES = [
     name: 'Party & Special Occasion',
     subtitle: 'Party, birthday, formal, evening makeup and corporate events',
     description: 'Party, birthday, formal, evening makeup and corporate events with sculpted complexion and radiant, camera-ready eyes built to last all event.',
-    price: '$220',
+    price: '$120',
     popular: true,
     accent: '#B829A0',
     image: '/images/services/svc-party-makeup.jpg',
@@ -55,7 +55,7 @@ export const MAKEUP_SERVICES = [
     description: 'Hands-on makeup education tailored to your goals — personal 1-on-1 lessons, beginner classes, and intensive 3-day bridal and party masterclasses.',
     price: 'From $50',
     accent: '#B829A0',
-    image: '/images/services/svc-edu-beginners.png',
+    image: '/WhatsApp Image 2026-11-06 at 3.10.41 AM.jpeg',
   },
   {
     id: 'girls-makeup',
@@ -63,7 +63,7 @@ export const MAKEUP_SERVICES = [
     subtitle: 'Age-appropriate soft glam for young clients',
     description:
       'Gentle, youthful looks tailored for girls under 16 — soft, polished and camera-ready for parties, formals and special occasions.',
-    price: '$150',
+    price: '$85',
     accent: '#1FD1B2',
     image: '/images/services/svc-girls-makeup.png',
   },
