@@ -1,7 +1,38 @@
 import React from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
+import {
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle2,
+  Palette,
+  Eye,
+  Flower2,
+  Scissors,
+  Droplets,
+  GraduationCap,
+  Sparkles,
+} from 'lucide-react';
+
+const getCategoryIcon = (id: string, className = 'w-6 h-6') => {
+  switch (id) {
+    case 'makeup':
+      return <Palette className={className} />;
+    case 'brow-lamination-waxing':
+    case 'lash-brow-waxing':
+      return <Eye className={className} />;
+    case 'henna':
+      return <Flower2 className={className} />;
+    case 'hair':
+      return <Scissors className={className} />;
+    case 'skin':
+      return <Droplets className={className} />;
+    case 'beauty-education':
+      return <GraduationCap className={className} />;
+    default:
+      return <Sparkles className={className} />;
+  }
+};
 import {
   CERTIFICATE_DISCLAIMER,
   EDUCATION_LEARNING_POINTS,
@@ -41,7 +72,19 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ onBook }) => {
           <p className="text-[11px] uppercase tracking-[0.25em] font-semibold mb-2" style={{ color: category.accent }}>
             YM Studios · {category.shortName}
           </p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">{category.name}</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 flex items-center gap-3">
+            <span
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center shrink-0 border"
+              style={{
+                backgroundColor: `${category.accent}15`,
+                borderColor: `${category.accent}40`,
+                color: category.accent,
+              }}
+            >
+              {getCategoryIcon(category.id, 'w-5 h-5 sm:w-6 sm:h-6')}
+            </span>
+            <span>{category.name}</span>
+          </h1>
           <p className="font-script text-2xl sm:text-3xl text-[#F472B6] mb-4">{category.tagline}</p>
           <p className="max-w-3xl text-sm sm:text-base text-[#94A3B8] leading-relaxed">{category.description}</p>
         </div>
@@ -118,7 +161,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ onBook }) => {
                     Currently Not Available
                   </span>
                 ) : service.popular ? (
-                  <span className="absolute top-3 right-3 text-[10px] uppercase tracking-wider font-bold px-2.5 py-0.5 rounded-full bg-gradient-to-r from-[#B829A0] to-[#1FD1B2] text-white">
+                  <span className="absolute top-3 right-3 text-[10px] uppercase tracking-wider font-bold px-2.5 py-0.5 rounded-full bg-black/75 backdrop-blur-md border border-[#D4AF37]/50 text-[#D4AF37] shadow-md">
                     Popular
                   </span>
                 ) : null}
@@ -205,7 +248,7 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ onBook }) => {
           <button
             type="button"
             onClick={() => onBook(`${category.name} Enquiry`)}
-            className="px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-[#B829A0] to-[#1FD1B2] cursor-pointer"
+            className="px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-[#0B0C10] bg-[#1FD1B2] hover:bg-[#25e2c2] shadow-[0_4px_20px_rgba(31,209,178,0.3)] transition-colors cursor-pointer"
           >
             Enquire Now
           </button>

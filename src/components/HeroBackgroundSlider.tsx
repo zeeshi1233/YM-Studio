@@ -64,7 +64,7 @@ export const HERO_BG_SLIDES = [
     focus: 'object-center',
   },
   {
-    src: '/images/services/svc-edu-bridal.png',
+    src: '/bridal-party.jpg',
     label: 'Beauty Academy',
     category: 'Education',
     focus: 'object-center',

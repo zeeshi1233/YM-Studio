@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calculator, Sparkles, Check, Plus, Minus, ArrowRight, Clock, DollarSign } from 'lucide-react';
+import { Calculator, Sparkles, Check, Plus, Minus, ArrowRight, Clock, DollarSign, Droplets, Palette } from 'lucide-react';
 import { FACIAL_ADDONS } from '../data/servicesData';
 
 interface InteractiveQuoteCalculatorProps {
@@ -216,8 +216,11 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                 })}
 
                 {/* Complimentary perk */}
-                <div className="flex justify-between text-emerald-400 font-semibold pt-2 border-t border-white/[0.06]">
-                  <span>✨ 10-Min Skin Consultation</span>
+                <div className="flex justify-between text-emerald-400 font-semibold pt-2 border-t border-white/[0.06] items-center">
+                  <span className="flex items-center gap-1.5">
+                    <Droplets className="w-3.5 h-3.5 text-[#1FD1B2]" />
+                    <span>10-Min Skin Consultation</span>
+                  </span>
                   <span>FREE</span>
                 </div>
               </div>
@@ -232,7 +235,7 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-bold text-slate-300">Estimated Total:</span>
-                  <span className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#1FD1B2] via-emerald-300 to-[#1FD1B2] drop-shadow-[0_0_20px_rgba(31,209,178,0.4)]">
+                  <span className="text-3xl font-black text-[#1FD1B2] drop-shadow-[0_2px_12px_rgba(31,209,178,0.3)]">
                     ${totalCost} <span className="text-xs text-slate-400 font-normal">AUD</span>
                   </span>
                 </div>
@@ -241,11 +244,11 @@ export const InteractiveQuoteCalculator: React.FC<InteractiveQuoteCalculatorProp
               {/* Action Button */}
               <button
                 onClick={handleBookPackage}
-                className="w-full py-4 rounded-full text-xs sm:text-sm font-bold text-white uppercase tracking-wider bg-gradient-to-r from-[#B829A0] via-[#9333ea] to-[#1FD1B2] shadow-[0_0_25px_rgba(31,209,178,0.35)] hover:shadow-[0_0_40px_rgba(31,209,178,0.55)] transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2.5"
+                className="w-full py-4 rounded-full text-xs sm:text-sm font-bold text-[#0B0C10] uppercase tracking-wider bg-[#1FD1B2] hover:bg-[#25e2c2] shadow-[0_4px_22px_rgba(31,209,178,0.35)] hover:shadow-[0_6px_30px_rgba(31,209,178,0.5)] transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2.5"
                 id="apply-calculated-package-btn"
               >
                 <span>Book This Package</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-[#0B0C10]" />
               </button>
 
               <div className="text-[11px] text-center text-slate-400 mt-3">

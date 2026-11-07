@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { AboutSection } from './components/AboutSection';
 import { OverlappingScrollHero } from './components/OverlappingScrollHero';
 import { CategoryGrid } from './components/CategoryGrid';
 import { HennaHighlight } from './components/HennaHighlight';
@@ -32,6 +33,10 @@ function HomePage({
     <OverlappingScrollHero
       hero={<Hero onOpenBooking={() => onBook()} onOpenConsultation={onConsult} />}
     >
+      <AboutSection
+        onOpenBooking={() => onBook()}
+        onOpenConsultation={onConsult}
+      />
       <CategoryGrid onBook={(svc, details) => onBook(svc, details)} />
       <HennaHighlight onEnquire={() => onBook('Henna Services', 'Interested in henna services booking')} />
       <Academy

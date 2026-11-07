@@ -12,6 +12,8 @@ import {
   Layers,
   Heart,
   Check,
+  Award,
+  Sliders,
 } from 'lucide-react';
 import { CERTIFICATE_DISCLAIMER, getServiceBySlug } from '../data/catalog';
 
@@ -84,7 +86,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBook }) 
                   Currently Not Available
                 </div>
               ) : service.popular ? (
-                <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-gradient-to-r from-[#B829A0] to-[#1FD1B2] text-white text-[11px] font-bold uppercase tracking-wider shadow-lg">
+                <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-[#D4AF37]/50 text-[#D4AF37] text-[11px] font-bold uppercase tracking-wider shadow-lg">
                   Most Requested
                 </div>
               ) : null}
@@ -159,7 +161,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBook }) 
             {service.keyBenefits && service.keyBenefits.length > 0 && (
               <div className="mb-6 glass-card rounded-2xl p-5 border border-white/[0.08]">
                 <h2 className="text-xs font-bold uppercase tracking-wider text-white mb-3 flex items-center gap-2">
-                  <Sparkles className="w-3.5 h-3.5 text-[#1FD1B2]" />
+                  <Award className="w-3.5 h-3.5 text-[#1FD1B2]" />
                   Key Benefits
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -228,7 +230,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBook }) 
               <div className="mb-6 glass-card rounded-2xl p-5 border border-[#B829A0]/30 bg-[#B829A0]/5">
                 <div className="flex items-center justify-between mb-3">
                   <h2 className="text-xs font-bold uppercase tracking-wider text-white flex items-center gap-2">
-                    <Sparkles className="w-3.5 h-3.5 text-[#F472B6]" />
+                    <Sliders className="w-3.5 h-3.5 text-[#F472B6]" />
                     Customizable Target Options
                   </h2>
                   <span className="text-[11px] text-[#F472B6]">Choose your focus</span>
@@ -323,9 +325,10 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBook }) 
                 <button
                   type="button"
                   onClick={handleBookClick}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-[#B829A0] to-[#1FD1B2] hover:shadow-[0_0_25px_rgba(31,209,178,0.35)] transition-all cursor-pointer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-[#0B0C10] bg-[#1FD1B2] hover:bg-[#25e2c2] shadow-[0_4px_20px_rgba(31,209,178,0.3)] transition-colors cursor-pointer"
                 >
-                  Enquire / Book <ArrowRight className="w-4 h-4" />
+                  <span>Enquire / Book</span>
+                  <ArrowRight className="w-4 h-4 text-[#0B0C10]" />
                 </button>
               )}
               <Link

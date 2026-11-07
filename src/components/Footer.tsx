@@ -112,7 +112,7 @@ export const Footer: React.FC = () => {
                 href="https://instagram.com/ym.studioz"
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-center justify-between p-3 rounded-2xl bg-black/40 border border-white/[0.08] hover:border-[#1FD1B2]/50 hover:bg-gradient-to-r hover:from-[#B829A0]/10 hover:to-[#1FD1B2]/10 transition-all duration-300"
+                className="group flex items-center justify-between p-3 rounded-2xl bg-black/40 border border-white/[0.08] hover:border-[#1FD1B2]/50 hover:bg-white/[0.04] transition-all duration-300"
                 id="footer-insta-studioz"
               >
                 <div className="flex items-center gap-3">
@@ -153,7 +153,7 @@ export const Footer: React.FC = () => {
                 href="https://www.facebook.com/YMStudioS"
                 target="_blank"
                 rel="noreferrer"
-                className="group flex items-center justify-between p-3 rounded-2xl bg-black/40 border border-white/[0.08] hover:border-[#1FD1B2]/50 hover:bg-gradient-to-r hover:from-[#B829A0]/10 hover:to-[#1FD1B2]/10 transition-all duration-300"
+                className="group flex items-center justify-between p-3 rounded-2xl bg-black/40 border border-white/[0.08] hover:border-[#1FD1B2]/50 hover:bg-white/[0.04] transition-all duration-300"
                 id="footer-facebook-link"
               >
                 <div className="flex items-center gap-3">

@@ -85,7 +85,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
             </p>
             <button
               onClick={onClose}
-              className="px-6 py-2.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#B829A0] via-[#9333ea] to-[#1FD1B2] shadow-[0_0_20px_rgba(31,209,178,0.35)] cursor-pointer"
+              className="px-6 py-2.5 rounded-full text-xs font-bold text-[#0B0C10] bg-[#1FD1B2] hover:bg-[#25e2c2] shadow-[0_4px_18px_rgba(31,209,178,0.3)] transition-colors cursor-pointer"
             >
               Done
             </button>
@@ -93,7 +93,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
         ) : (
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1FD1B2]/10 border border-[#1FD1B2]/30 text-xs font-semibold text-[#1FD1B2] mb-3 shadow-[0_0_15px_rgba(31,209,178,0.15)]">
-              <Sparkles className="w-3.5 h-3.5" />
+              <Droplets className="w-3.5 h-3.5" />
               Complimentary Studio Benefit
             </div>
 
@@ -177,7 +177,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-full text-xs font-bold text-white uppercase tracking-wider bg-gradient-to-r from-[#B829A0] via-[#9333ea] to-[#1FD1B2] shadow-[0_0_25px_rgba(31,209,178,0.35)] hover:shadow-[0_0_35px_rgba(31,209,178,0.55)] transition-all cursor-pointer mt-4"
+                className="w-full py-3.5 rounded-full text-xs font-bold text-[#0B0C10] uppercase tracking-wider bg-[#1FD1B2] hover:bg-[#25e2c2] shadow-[0_4px_22px_rgba(31,209,178,0.35)] hover:shadow-[0_6px_28px_rgba(31,209,178,0.5)] transition-all cursor-pointer mt-4"
               >
                 Claim Free Skin Consultation
               </button>

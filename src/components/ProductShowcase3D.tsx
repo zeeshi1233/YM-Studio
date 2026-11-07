@@ -2,7 +2,17 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { PRODUCTS_3D } from '../data/servicesData';
 import { Product3D } from '../types';
-import { RotateCw, Sparkles, Check, Droplets, Shield, ArrowRight, Eye, RefreshCw } from 'lucide-react';
+import { RotateCw, Sparkles, Check, Droplets, Shield, ArrowRight, Eye, RefreshCw, Flower2, Zap } from 'lucide-react';
+
+const getProductIcon = (type: string, id: string, className = 'w-3.5 h-3.5') => {
+  if (type === 'serum' || id.includes('serum') || id.includes('elixir')) {
+    return <Droplets className={className} />;
+  }
+  if (type === 'cream' || id.includes('creme') || id.includes('peptide')) {
+    return <Flower2 className={className} />;
+  }
+  return <Zap className={className} />;
+};
 
 interface ProductShowcase3DProps {
   onSelectProduct: (productName: string) => void;
@@ -440,18 +450,18 @@ export const ProductShowcase3D: React.FC<ProductShowcase3DProps> = ({ onSelectPr
                 <button
                   key={product.id}
                   onClick={() => setActiveProductId(product.id)}
-                  className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer flex items-center gap-2 ${
+                  className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-colors duration-200 cursor-pointer flex items-center gap-2 ${
                     isSelected
-                      ? 'bg-gradient-to-r from-[#B829A0] to-[#1FD1B2] text-white shadow-[0_0_25px_rgba(31,209,178,0.35)]'
+                      ? 'bg-[#1FD1B2] text-[#0B0C10] font-bold shadow-[0_4px_18px_rgba(31,209,178,0.25)]'
                       : 'bg-black/50 backdrop-blur-xl text-slate-300 border border-white/[0.08] hover:border-[#1FD1B2]/40 hover:text-white'
                   }`}
                   id={`product-tab-${product.id}`}
                 >
-                  <Sparkles
-                    className={`w-3.5 h-3.5 ${
-                      isSelected ? 'text-white' : 'text-[#1FD1B2]'
-                    }`}
-                  />
+                  {getProductIcon(
+                    product.type,
+                    product.id,
+                    `w-3.5 h-3.5 ${isSelected ? 'text-[#0B0C10]' : 'text-[#1FD1B2]'}`
+                  )}
                   <span>{product.name.split(' ')[0]} {product.name.split(' ')[1]}</span>
                 </button>
               );
@@ -509,11 +519,11 @@ export const ProductShowcase3D: React.FC<ProductShowcase3DProps> = ({ onSelectPr
 
             {/* Interactive Hotspot Pills underneath canvas */}
             <div className="w-full pt-2 flex flex-wrap items-center justify-center gap-2 z-10">
-              <span className="text-[11px] text-slate-400 bg-black/60 backdrop-blur-md px-3.5 py-1 rounded-full border border-white/[0.08]">
-                ✨ High-Precision PBR Glass & Metal Shaders
+              <span className="text-[11px] text-slate-300 bg-black/60 backdrop-blur-md px-3.5 py-1 rounded-full border border-white/[0.08]">
+                Studio Dispensed Formulations
               </span>
               <span className="text-[11px] text-[#1FD1B2] bg-[#1FD1B2]/10 backdrop-blur-md px-3.5 py-1 rounded-full border border-[#1FD1B2]/30 shadow-[0_0_15px_rgba(31,209,178,0.15)]">
-                💎 Studio Authentic Standard
+                Clinical Grade Active Ingredients
               </span>
             </div>
           </div>
@@ -584,11 +594,11 @@ export const ProductShowcase3D: React.FC<ProductShowcase3DProps> = ({ onSelectPr
               {/* Action Button */}
               <button
                 onClick={() => onSelectProduct(`Product / Treatment: ${activeProduct.name}`)}
-                className="w-full py-3.5 rounded-full text-xs sm:text-sm font-bold text-white uppercase tracking-wider bg-gradient-to-r from-[#B829A0] via-[#9333ea] to-[#1FD1B2] hover:shadow-[0_0_25px_rgba(31,209,178,0.4)] transition-all cursor-pointer flex items-center justify-center gap-2"
+                className="w-full py-3.5 rounded-full text-xs sm:text-sm font-bold text-[#0B0C10] uppercase tracking-wider bg-[#1FD1B2] hover:bg-[#25e2c2] shadow-[0_4px_22px_rgba(31,209,178,0.35)] hover:shadow-[0_6px_30px_rgba(31,209,178,0.5)] transition-all cursor-pointer flex items-center justify-center gap-2"
                 id="product-inquire-btn"
               >
                 <span>Inquire About This Formulation</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-[#0B0C10]" />
               </button>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Flower2 } from 'lucide-react';
 
 interface HennaHighlightProps {
   onEnquire: () => void;
@@ -30,7 +30,7 @@ export const HennaHighlight: React.FC<HennaHighlightProps> = ({ onEnquire }) => 
           </div>
           <div className="lg:col-span-7 p-6 sm:p-8 md:p-10 flex flex-col justify-center">
             <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[#D4AF37] font-semibold mb-3">
-              <Sparkles className="w-3.5 h-3.5" /> Henna & Mehndi
+              <Flower2 className="w-3.5 h-3.5 text-[#D4AF37]" /> Henna & Mehndi
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">HENNA & MEHNDI</h2>
             <p className="font-script text-2xl text-[#F472B6] mb-3">Beautifully Handcrafted. Meaningfully Celebrated.</p>

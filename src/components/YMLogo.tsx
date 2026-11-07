@@ -26,13 +26,13 @@ export const YMLogo: React.FC<YMLogoProps> = ({
       id={`ym-logo-${size}`}
     >
       <div className="relative flex-shrink-0 flex items-center justify-center">
-        <div className="absolute -inset-2 bg-gradient-to-br from-[#B829A0]/35 to-[#1FD1B2]/35 rounded-full blur-lg opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute -inset-2 bg-[#D4AF37]/20 rounded-full blur-lg opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
         <img
           src="/logo.png"
           width={dimensions.icon}
           height={dimensions.icon}
           alt="YM Studios"
-          className="relative z-10 object-contain drop-shadow-[0_8px_24px_rgba(31,209,178,0.28)] group-hover:scale-[1.04] transition-transform duration-500"
+          className="relative z-10 object-contain drop-shadow-[0_4px_16px_rgba(212,175,55,0.2)] group-hover:scale-[1.03] transition-transform duration-500"
           style={{ width: dimensions.icon, height: 'auto' }}
         />
       </div>

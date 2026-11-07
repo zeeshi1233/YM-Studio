@@ -31,12 +31,12 @@ export const MakeupAtmosphere: React.FC<{ className?: string }> = ({ className =
       ))}
 
       <motion.div
-        className="absolute -left-6 top-1/3 w-16 h-16 rounded-full bg-gradient-to-br from-[#B829A0] to-[#F472B6] opacity-40 blur-[1px] makeup-orb"
+        className="absolute -left-6 top-1/3 w-16 h-16 rounded-full bg-[#D4AF37]/15 opacity-40 blur-[1px] makeup-orb"
         animate={{ y: [0, -22, 0], rotate: [0, 18, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute -right-4 bottom-1/4 w-12 h-12 rounded-full bg-gradient-to-br from-[#1FD1B2] to-[#2DD4BF] opacity-35 blur-[1px] makeup-orb"
+        className="absolute -right-4 bottom-1/4 w-12 h-12 rounded-full bg-[#1FD1B2]/15 opacity-35 blur-[1px] makeup-orb"
         animate={{ y: [0, 18, 0], rotate: [0, -14, 0] }}
         transition={{ duration: 6.2, repeat: Infinity, ease: 'easeInOut' }}
       />

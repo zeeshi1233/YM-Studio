@@ -7,11 +7,8 @@ import {
   ArrowRight,
   MapPin,
   Heart,
-  Brush,
+  Award,
   Droplets,
-  Eye,
-  Flower2,
-  Scissors,
 } from 'lucide-react';
 import { YMLogo } from './YMLogo';
 import { MakeupAtmosphere } from './MakeupAtmosphere';
@@ -21,39 +18,6 @@ interface HeroProps {
   onOpenBooking: () => void;
   onOpenConsultation: () => void;
 }
-
-const OFFERINGS = [
-  {
-    icon: Brush,
-    title: 'Makeup Artistry',
-    desc: 'Flawless looks tailored to you, for every occasion.',
-    to: '/category/makeup',
-  },
-  {
-    icon: Droplets,
-    title: 'Skin & Beauty',
-    desc: 'Healthy, glowing skin is always in.',
-    to: '/category/skin',
-  },
-  {
-    icon: Eye,
-    title: 'Brow Lamination and Waxing',
-    desc: 'Laminated brows, tinting & precision face & body waxing.',
-    to: '/category/brow-lamination-waxing',
-  },
-  {
-    icon: Flower2,
-    title: 'Henna Services',
-    desc: 'Handcrafted bridal mehndi, sangeet & bespoke guest henna.',
-    to: '/category/henna',
-  },
-  {
-    icon: Scissors,
-    title: 'Hair Styles and Cuts',
-    desc: 'Straight & sleek, Hollywood curls, updos & style cuts.',
-    to: '/category/hair',
-  },
-];
 
 const PILLARS = [
   { label: 'Makeup', to: '/category/makeup' },
@@ -119,18 +83,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenConsultation })
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.18 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.08] mb-3"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.08] mb-2"
             >
-              YM<span className="text-[#D4AF37]">.</span>STUDIOS
+              YM Studios
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.55, delay: 0.24 }}
-              className="text-sm sm:text-base uppercase tracking-[0.22em] text-[#B829A0] font-semibold mb-4"
+              className="text-xs sm:text-sm uppercase tracking-[0.22em] text-[#D4AF37] font-semibold mb-5"
             >
-              Beauty, Perfected. Confidence, Redefined.
+              Melbourne Bridal · Makeup Artistry · Clinical Skin & Academy
             </motion.p>
 
             <motion.div
@@ -138,76 +102,55 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenConsultation })
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.3 }}
-              className="max-w-xl mb-3 space-y-3"
+              className="max-w-xl mb-4 space-y-2.5"
             >
-              <p className="text-base sm:text-lg font-semibold text-white tracking-wide">
-                12 years. One passion. Flawless results.
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                Led by Yamna Mohsin with over 12 years across Australia&apos;s leading clinics and luxury beauty brands. Every bridal look, skin treatment, and training session is tailored with precision, science, and care.
               </p>
-              <p className="text-sm sm:text-base text-[#94A3B8] leading-relaxed">
-                From makeup artistry to skincare, events to training—I bring precision, creativity, and heart to every face I touch. You&apos;re not just booking a service.{' '}
-                <span className="text-[#1FD1B2] font-semibold">You&apos;re in expert hands.</span>
+              <p className="font-script text-2xl sm:text-3xl text-[#F472B6]">
+                Beauty that feels like you
               </p>
             </motion.div>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.55, delay: 0.34 }}
-              className="font-script text-2xl sm:text-3xl text-[#F472B6] mb-7"
-            >
-              Beauty that <span className="italic">feels like you</span>
-            </motion.p>
 
             <motion.div
               id="hero-cta-group"
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.38 }}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-9"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-8"
             >
               <button
                 onClick={() => onOpenBooking()}
-                className="px-7 py-3.5 rounded-full text-sm font-bold text-white uppercase tracking-wider bg-gradient-to-r from-[#B829A0] via-[#9333ea] to-[#1FD1B2] shadow-[0_0_28px_rgba(31,209,178,0.35)] hover:shadow-[0_0_40px_rgba(31,209,178,0.55)] transition-all duration-300 hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2 group"
+                className="px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold text-[#0B0C10] uppercase tracking-wider bg-[#1FD1B2] hover:bg-[#25e2c2] shadow-[0_4px_20px_rgba(31,209,178,0.3)] transition-colors cursor-pointer flex items-center justify-center gap-2 group"
               >
                 <Calendar className="w-4 h-4" />
-                Enquire & Book
+                <span>Enquire & Book</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               <button
                 onClick={onOpenConsultation}
-                className="px-6 py-3.5 rounded-full text-sm font-semibold text-[#1FD1B2] bg-black/45 border border-[#1FD1B2]/45 hover:bg-[#1FD1B2]/10 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2"
+                className="px-6 py-3.5 rounded-full text-xs sm:text-sm font-semibold text-slate-200 bg-black/50 border border-white/[0.15] hover:border-[#D4AF37] hover:text-[#D4AF37] transition-colors cursor-pointer flex items-center justify-center gap-2"
               >
-                <Sparkles className="w-4 h-4 text-[#F472B6]" />
-                Free Skin Consultation
+                <Droplets className="w-4 h-4 text-[#1FD1B2]" />
+                <span>Free Skin Consultation</span>
               </button>
             </motion.div>
 
-            <div className="space-y-3">
-              <p className="text-[11px] uppercase tracking-[0.28em] text-[#D4AF37] font-bold">
-                What I Offer
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {OFFERINGS.map((item, index) => (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.45, delay: 0.42 + index * 0.05 }}
-                    className={OFFERINGS.length % 2 !== 0 && index === OFFERINGS.length - 1 ? 'sm:col-span-2' : ''}
-                  >
-                    <Link to={item.to} className="flyer-offer-row text-left cursor-pointer">
-                      <span className="flyer-gold-ring">
-                        <item.icon className="w-4 h-4" />
-                      </span>
-                      <span>
-                        <span className="block text-sm font-bold text-white">{item.title}</span>
-                        <span className="block text-[11px] text-[#94A3B8] leading-snug">{item.desc}</span>
-                      </span>
-                    </Link>
-                  </motion.div>
-                ))}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.44 }}
+              className="flex flex-wrap items-center gap-2.5 pt-1"
+            >
+              <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/45 border border-[#D4AF37]/30 text-xs text-slate-200">
+                <Award className="w-3.5 h-3.5 text-[#D4AF37]" />
+                <span>12+ Years Industry Experience</span>
               </div>
-            </div>
+              <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/45 border border-[#1FD1B2]/30 text-xs text-slate-200">
+                <Heart className="w-3.5 h-3.5 text-[#1FD1B2]" />
+                <span>Personalised & Bespoke Care</span>
+              </div>
+            </motion.div>
           </div>
 
           {/* Right portrait — flyer style */}
@@ -230,7 +173,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking, onOpenConsultation })
                 initial={{ scale: 0.85, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
-                className="absolute top-5 right-5 z-10 w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-[#B829A0] to-[#7c1d6e] border-2 border-[#D4AF37]/50 shadow-[0_0_30px_rgba(184,41,160,0.45)] flex flex-col items-center justify-center text-center p-3 animate-[floatSoft_5s_ease-in-out_infinite]"
+                className="absolute top-5 right-5 z-10 w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-black/85 backdrop-blur-md border-2 border-[#D4AF37]/60 shadow-[0_8px_32px_rgba(0,0,0,0.65)] flex flex-col items-center justify-center text-center p-3 animate-[floatSoft_5s_ease-in-out_infinite]"
               >
                 <Heart className="w-4 h-4 text-[#D4AF37] mb-1" />
                 <span className="text-[10px] uppercase tracking-wider text-white/90 font-semibold leading-tight">

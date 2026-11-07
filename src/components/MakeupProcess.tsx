@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Palette, CheckCircle2 } from 'lucide-react';
 
 interface MakeupProcessProps {
   onBook: () => void;
@@ -46,7 +46,7 @@ export const MakeupProcess: React.FC<MakeupProcessProps> = ({ onBook }) => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#1FD1B2]/35 text-[11px] uppercase tracking-widest text-[#1FD1B2] font-semibold mb-3">
-              <Sparkles className="w-3.5 h-3.5" />
+              <Palette className="w-3.5 h-3.5" />
               How Makeup Comes Alive
             </div>
             <h2 id="makeup-process-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
@@ -62,10 +62,10 @@ export const MakeupProcess: React.FC<MakeupProcessProps> = ({ onBook }) => {
           <button
             type="button"
             onClick={onBook}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-[#B829A0] to-[#1FD1B2] shadow-[0_0_24px_rgba(31,209,178,0.3)] hover:-translate-y-0.5 transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-[#0B0C10] bg-[#1FD1B2] hover:bg-[#25e2c2] shadow-[0_4px_20px_rgba(31,209,178,0.3)] hover:-translate-y-0.5 transition-all cursor-pointer"
           >
-            Book This Look
-            <ArrowRight className="w-4 h-4" />
+            <span>Book This Look</span>
+            <ArrowRight className="w-4 h-4 text-[#0B0C10]" />
           </button>
         </div>
 
@@ -86,7 +86,7 @@ export const MakeupProcess: React.FC<MakeupProcessProps> = ({ onBook }) => {
                   <span
                     className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold ${
                       active === index
-                        ? 'bg-gradient-to-br from-[#B829A0] to-[#1FD1B2] text-white'
+                        ? 'bg-[#1FD1B2] text-[#0B0C10] font-bold shadow-md'
                         : 'bg-white/5 text-[#D4AF37] border border-[#D4AF37]/35'
                     }`}
                   >

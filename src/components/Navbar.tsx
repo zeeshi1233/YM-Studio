@@ -1,8 +1,43 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { YMLogo } from './YMLogo';
-import { Menu, X, Calendar, ChevronDown, Sparkles } from 'lucide-react';
+import {
+  Menu,
+  X,
+  Calendar,
+  ChevronDown,
+  Sparkles,
+  Palette,
+  Eye,
+  Flower2,
+  Scissors,
+  Droplets,
+  GraduationCap,
+  Calculator,
+  Phone,
+  User,
+} from 'lucide-react';
 import { SERVICE_CATEGORIES } from '../data/catalog';
+
+const getCategoryIcon = (id: string, className = 'w-3.5 h-3.5') => {
+  switch (id) {
+    case 'makeup':
+      return <Palette className={className} />;
+    case 'brow-lamination-waxing':
+    case 'lash-brow-waxing':
+      return <Eye className={className} />;
+    case 'henna':
+      return <Flower2 className={className} />;
+    case 'hair':
+      return <Scissors className={className} />;
+    case 'skin':
+      return <Droplets className={className} />;
+    case 'beauty-education':
+      return <GraduationCap className={className} />;
+    default:
+      return <Sparkles className={className} />;
+  }
+};
 
 interface NavbarProps {
   onOpenBooking: (serviceCategory?: string) => void;
@@ -45,11 +80,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenConsultatio
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'backdrop-blur-xl bg-[#0B0C10]/90 border-b border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.85)] py-2.5'
-          : 'backdrop-blur-md bg-[#0B0C10]/70 py-3.5 border-b border-white/[0.04]'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? 'backdrop-blur-xl bg-[#0B0C10]/90 border-b border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.85)] py-2.5'
+        : 'backdrop-blur-md bg-[#0B0C10]/70 py-3.5 border-b border-white/[0.04]'
+        }`}
     >
       <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
         <Link to="/" className="flex-shrink-0" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
@@ -75,9 +109,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenConsultatio
                     <div key={cat.id} className="relative group/item">
                       <Link
                         to={`/category/${cat.slug}`}
-                        className="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm text-slate-200 hover:bg-white/[0.05] hover:text-[#1FD1B2]"
+                        className="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm text-slate-200 hover:bg-white/[0.05] hover:text-[#1FD1B2] transition-colors"
                       >
-                        <span>{cat.navLabel}</span>
+                        <span className="flex items-center gap-2.5">
+                          {getCategoryIcon(cat.id, 'w-4 h-4 text-[#1FD1B2]')}
+                          <span>{cat.navLabel}</span>
+                        </span>
                         <ChevronDown className="w-3.5 h-3.5 -rotate-90 opacity-50" />
                       </Link>
                       <div className="hidden group-hover/item:block absolute left-full top-0 pl-2 w-64">
@@ -100,6 +137,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenConsultatio
             )}
           </div>
 
+          <button
+            type="button"
+            onClick={() => goHomeSection('about-section')}
+            className="px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium text-slate-300 hover:text-[#D4AF37] transition-colors whitespace-nowrap cursor-pointer"
+          >
+            About
+          </button>
+
           <Link
             to="/category/brow-lamination-waxing"
             className="px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium text-slate-300 hover:text-[#B829A0] transition-colors whitespace-nowrap"
@@ -118,13 +163,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenConsultatio
           >
             Hair Styles & Cuts
           </Link>
-          <button
+          {/* <button
             type="button"
             onClick={() => goHomeSection('academy-section')}
-            className="px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium text-slate-300 hover:text-[#F472B6] inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+            className="px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium text-slate-300 hover:text-[#F472B6] inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap transition-colors"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#B829A0]" /> Academy
-          </button>
+            <GraduationCap className="w-3.5 h-3.5 text-[#F472B6]" />
+            <span>Academy</span>
+          </button> */}
           <button
             type="button"
             onClick={() => goHomeSection('quote-calculator-section')}
@@ -150,7 +196,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenConsultatio
           </button>
           <button
             onClick={() => onOpenBooking()}
-            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-white uppercase tracking-wider bg-gradient-to-r from-[#B829A0] to-[#1FD1B2] cursor-pointer"
+            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-[#0B0C10] uppercase tracking-wider bg-[#1FD1B2] hover:bg-[#25e2c2] shadow-[0_2px_14px_rgba(31,209,178,0.3)] transition-colors cursor-pointer"
           >
             <Calendar className="w-3.5 h-3.5" /> Book Now
           </button>
@@ -166,6 +212,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenConsultatio
 
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-white/[0.08] bg-[#0B0C10]/98 px-4 py-5 max-h-[80vh] overflow-y-auto">
+          <button
+            type="button"
+            onClick={() => goHomeSection('about-section')}
+            className="w-full text-left text-sm font-semibold text-white py-2.5 mb-2 border-b border-white/[0.06] cursor-pointer flex items-center justify-between"
+          >
+            <span className="flex items-center gap-2">
+              <User className="w-4 h-4 text-[#D4AF37]" />
+              <span>About Founder</span>
+            </span>
+            <span className="text-xs text-[#D4AF37]">Yamna Mohsin</span>
+          </button>
           {SERVICE_CATEGORIES.map((cat) => (
             <div key={cat.id} className="mb-3 border-b border-white/[0.06] pb-3">
               <button
@@ -173,11 +230,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenConsultatio
                 onClick={() => setOpenDropdown(openDropdown === cat.id ? null : cat.id)}
                 className="w-full flex items-center justify-between text-left text-sm font-semibold text-white py-2 cursor-pointer"
               >
-                {cat.name}
+                <span className="flex items-center gap-2.5">
+                  {getCategoryIcon(cat.id, 'w-4 h-4 text-[#1FD1B2]')}
+                  <span>{cat.name}</span>
+                </span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === cat.id ? 'rotate-180' : ''}`} />
               </button>
               {openDropdown === cat.id && (
-                <div className="pl-2 space-y-1">
+                <div className="pl-6 space-y-1 mt-1">
                   <Link to={`/category/${cat.slug}`} className="block text-xs text-[#1FD1B2] py-1.5 font-semibold">
                     View all {cat.shortName}
                   </Link>
@@ -194,7 +254,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, onOpenConsultatio
               )}
             </div>
           ))}
-          <button type="button" onClick={() => goHomeSection('booking-section')} className="w-full mt-2 py-3 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#B829A0] to-[#1FD1B2]">
+          <button
+            type="button"
+            onClick={() => goHomeSection('academy-section')}
+            className="w-full text-left text-sm font-semibold text-white py-2.5 mb-2 border-b border-white/[0.06] cursor-pointer flex items-center justify-between"
+          >
+            <span className="flex items-center gap-2">
+              <GraduationCap className="w-4 h-4 text-[#F472B6]" />
+              <span>Beauty Academy & Courses</span>
+            </span>
+            <span className="text-xs text-[#1FD1B2]">Explore</span>
+          </button>
+          <button type="button" onClick={() => goHomeSection('booking-section')} className="w-full mt-2 py-3 rounded-full text-xs font-bold text-[#0B0C10] uppercase tracking-wider bg-[#1FD1B2] hover:bg-[#25e2c2] shadow-[0_2px_14px_rgba(31,209,178,0.3)] transition-colors">
             Enquire & Book
           </button>
         </div>

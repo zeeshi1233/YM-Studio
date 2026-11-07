@@ -9,6 +9,8 @@ import {
   Scissors,
   Droplets,
   Zap,
+  Eye,
+  Palette,
 } from 'lucide-react';
 import {
   MAKEUP_SERVICES,
@@ -62,7 +64,7 @@ export const ServicesMenu: React.FC<ServicesMenuProps> = ({ onSelectService }) =
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#131419] border border-[#D4AF37]/35 text-xs font-semibold text-[#D4AF37] uppercase tracking-widest mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
+            <Layers className="w-3.5 h-3.5 text-[#D4AF37]" />
             What I Offer
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-2">
@@ -79,19 +81,19 @@ export const ServicesMenu: React.FC<ServicesMenuProps> = ({ onSelectService }) =
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-2.5 mt-8">
-            <button onClick={() => handleTab('all', 'services-section')} className={tabClass('all', 'bg-gradient-to-r from-[#B829A0] to-[#1FD1B2] text-white shadow-[0_0_25px_rgba(31,209,178,0.35)]')}>
+            <button onClick={() => handleTab('all', 'services-section')} className={tabClass('all', 'bg-[#1FD1B2] text-[#0B0C10] font-bold shadow-[0_4px_18px_rgba(31,209,178,0.25)]')}>
               All Categories
             </button>
-            <button onClick={() => handleTab('makeup', 'makeup-services')} className={tabClass('makeup', 'bg-[#1FD1B2] text-[#0B0C10] font-bold shadow-[0_0_25px_rgba(31,209,178,0.4)]')}>
+            <button onClick={() => handleTab('makeup', 'makeup-services')} className={tabClass('makeup', 'bg-[#1FD1B2] text-[#0B0C10] font-bold shadow-[0_4px_18px_rgba(31,209,178,0.25)]')}>
               Makeup Artistry
             </button>
-            <button onClick={() => handleTab('brows', 'lash-brow-waxing-section')} className={tabClass('brows', 'bg-[#B829A0] text-white font-bold shadow-[0_0_25px_rgba(184,41,160,0.4)]')}>
+            <button onClick={() => handleTab('brows', 'lash-brow-waxing-section')} className={tabClass('brows', 'bg-[#B829A0] text-white font-bold shadow-[0_4px_18px_rgba(184,41,160,0.3)]')}>
               Lash, Brow & Waxing
             </button>
-            <button onClick={() => handleTab('skin', 'skin-treatments-section')} className={tabClass('skin', 'bg-[#B829A0] text-white font-bold shadow-[0_0_25px_rgba(184,41,160,0.4)]')}>
+            <button onClick={() => handleTab('skin', 'skin-treatments-section')} className={tabClass('skin', 'bg-[#B829A0] text-white font-bold shadow-[0_4px_18px_rgba(184,41,160,0.3)]')}>
               Skin Treatments & Facials
             </button>
-            <button onClick={() => handleTab('hair', 'hair-styling-section')} className={tabClass('hair', 'bg-gradient-to-r from-[#1FD1B2] to-[#B829A0] text-white font-bold shadow-[0_0_25px_rgba(31,209,178,0.35)]')}>
+            <button onClick={() => handleTab('hair', 'hair-styling-section')} className={tabClass('hair', 'bg-[#1FD1B2] text-[#0B0C10] font-bold shadow-[0_4px_18px_rgba(31,209,178,0.25)]')}>
               Hair Styling
             </button>
           </div>
@@ -139,7 +141,7 @@ export const ServicesMenu: React.FC<ServicesMenuProps> = ({ onSelectService }) =
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C10] via-transparent to-transparent pointer-events-none" />
                     {item.popular && (
-                      <div className="absolute top-3 right-3 bg-gradient-to-r from-[#B829A0] to-[#1FD1B2] text-white text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full shadow-md">
+                      <div className="absolute top-3 right-3 bg-black/75 backdrop-blur-md border border-[#D4AF37]/50 text-[#D4AF37] text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full shadow-md">
                         Most Requested
                       </div>
                     )}
@@ -237,7 +239,7 @@ export const ServicesMenu: React.FC<ServicesMenuProps> = ({ onSelectService }) =
             </div>
 
             <h4 className="text-lg font-bold text-white uppercase tracking-wider mb-4 flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-[#1FD1B2]" /> Lash & Brow Menu
+              <Eye className="w-4 h-4 text-[#1FD1B2]" /> Lash & Brow Menu
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {LASH_BROW_SERVICES.map((item, index) => (
@@ -262,7 +264,7 @@ export const ServicesMenu: React.FC<ServicesMenuProps> = ({ onSelectService }) =
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C10] to-transparent" />
                     {item.popular && (
-                      <div className="absolute top-3 right-3 bg-gradient-to-r from-[#B829A0] to-[#1FD1B2] text-white text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">
+                      <div className="absolute top-3 right-3 bg-black/75 backdrop-blur-md border border-[#D4AF37]/50 text-[#D4AF37] text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full shadow-md">
                         Popular
                       </div>
                     )}
@@ -438,7 +440,7 @@ export const ServicesMenu: React.FC<ServicesMenuProps> = ({ onSelectService }) =
                         {!item.unavailable && (
                           <button
                             onClick={() => onSelectService(`Skin Treatment: ${item.name}`)}
-                            className="w-full py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-[#B829A0] to-[#1FD1B2] hover:shadow-[0_0_20px_rgba(31,209,178,0.3)] transition-all cursor-pointer flex items-center justify-center gap-1.5"
+                            className="w-full py-2.5 rounded-xl text-xs font-bold text-[#0B0C10] bg-[#1FD1B2] hover:bg-[#25e2c2] shadow-[0_2px_14px_rgba(31,209,178,0.25)] transition-colors cursor-pointer flex items-center justify-center gap-1.5"
                           >
                             <span>Book Treatment</span>
                             <ArrowRight className="w-3.5 h-3.5" />
@@ -454,7 +456,7 @@ export const ServicesMenu: React.FC<ServicesMenuProps> = ({ onSelectService }) =
             {(skinCategory === 'all' || skinCategory === 'hydrating') && (
               <div className="mb-12">
                 <div className="flex items-center gap-2 mb-4">
-                  <Sparkles className="w-4 h-4 text-[#F472B6]" />
+                  <Droplets className="w-4 h-4 text-[#1FD1B2]" />
                   <h4 className="text-lg font-bold text-white uppercase tracking-wider">Deep Cleansing & Hydrating Facials</h4>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

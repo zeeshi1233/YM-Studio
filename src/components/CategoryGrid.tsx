@@ -9,12 +9,38 @@ import {
   Calendar,
   Info,
   Layers,
+  Palette,
+  Eye,
+  Flower2,
+  Scissors,
+  Droplets,
+  GraduationCap,
 } from 'lucide-react';
 import { SERVICE_CATEGORIES, ServiceCategory } from '../data/catalog';
 
 interface CategoryGridProps {
   onBook?: (serviceName: string, details?: string) => void;
 }
+
+const getCategoryIcon = (id: string, className = 'w-5 h-5') => {
+  switch (id) {
+    case 'makeup':
+      return <Palette className={className} />;
+    case 'brow-lamination-waxing':
+    case 'lash-brow-waxing':
+      return <Eye className={className} />;
+    case 'henna':
+      return <Flower2 className={className} />;
+    case 'hair':
+      return <Scissors className={className} />;
+    case 'skin':
+      return <Droplets className={className} />;
+    case 'beauty-education':
+      return <GraduationCap className={className} />;
+    default:
+      return <Sparkles className={className} />;
+  }
+};
 
 export const CategoryGrid: React.FC<CategoryGridProps> = ({ onBook }) => {
   const [activeTab, setActiveTab] = useState<string>('all');
@@ -31,19 +57,19 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ onBook }) => {
         );
 
   const navTabs = [
-    { id: 'all', label: 'All Categories' },
-    { id: 'brow-lamination-waxing', label: 'Brow Lamination & Waxing', accent: '#B829A0' },
-    { id: 'henna', label: 'Henna Services', accent: '#D4AF37' },
-    { id: 'hair', label: 'Hair Styles & Cuts', accent: '#D4AF37' },
-    { id: 'makeup', label: 'Makeup Artistry', accent: '#1FD1B2' },
-    { id: 'skin', label: 'Skin Treatments', accent: '#1FD1B2' },
-    { id: 'beauty-education', label: 'Beauty Education', accent: '#F472B6' },
+    { id: 'all', label: 'All Categories', icon: Layers },
+    { id: 'brow-lamination-waxing', label: 'Brow Lamination & Waxing', accent: '#B829A0', icon: Eye },
+    { id: 'henna', label: 'Henna Services', accent: '#D4AF37', icon: Flower2 },
+    { id: 'hair', label: 'Hair Styles & Cuts', accent: '#D4AF37', icon: Scissors },
+    { id: 'makeup', label: 'Makeup Artistry', accent: '#1FD1B2', icon: Palette },
+    { id: 'skin', label: 'Skin Treatments', accent: '#1FD1B2', icon: Droplets },
+    { id: 'beauty-education', label: 'Beauty Education', accent: '#F472B6', icon: GraduationCap },
   ];
 
   return (
     <section
       id="services-section"
-      className="relative py-20 md:py-28 bg-[#0B0C10] overflow-hidden rounded-t-[2rem] shadow-[0_-24px_60px_rgba(0,0,0,0.45)]"
+      className="relative py-20 md:py-28 bg-[#0B0C10] overflow-hidden border-t border-white/[0.06]"
     >
       <div className="absolute top-1/4 left-0 w-80 h-80 bg-[#1FD1B2]/10 blur-[140px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#B829A0]/10 blur-[140px] rounded-full pointer-events-none" />
@@ -51,7 +77,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ onBook }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#D4AF37]/35 text-[11px] uppercase tracking-widest text-[#D4AF37] font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
+            <Layers className="w-3.5 h-3.5" />
             What I Offer
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
@@ -68,18 +94,20 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ onBook }) => {
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mt-8">
             {navTabs.map((tab) => {
               const isActive = activeTab === tab.id;
+              const TabIcon = tab.icon;
               return (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   type="button"
-                  className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
+                  className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-colors duration-200 cursor-pointer flex items-center gap-2 ${
                     isActive
-                      ? 'bg-gradient-to-r from-[#B829A0] to-[#1FD1B2] text-white shadow-[0_0_25px_rgba(31,209,178,0.35)] scale-[1.02]'
-                      : 'bg-black/50 backdrop-blur-xl text-slate-300 border border-white/[0.08] hover:border-[#1FD1B2]/40 hover:text-white'
+                      ? 'bg-[#1FD1B2] text-[#0B0C10] font-bold shadow-[0_4px_18px_rgba(31,209,178,0.25)]'
+                      : 'bg-white/[0.04] text-slate-300 border border-white/[0.08] hover:border-white/[0.2] hover:text-white'
                   }`}
                 >
-                  {tab.label}
+                  <TabIcon className={`w-3.5 h-3.5 ${isActive ? 'text-[#0B0C10]' : 'text-slate-400'}`} />
+                  <span>{tab.label}</span>
                 </button>
               );
             })}
@@ -161,8 +189,18 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ onBook }) => {
                   >
                     YM Studios · {selectedCategory.shortName}
                   </p>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-                    {selectedCategory.name}
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 flex items-center gap-3">
+                    <span
+                      className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border"
+                      style={{
+                        backgroundColor: `${selectedCategory.accent}15`,
+                        borderColor: `${selectedCategory.accent}40`,
+                        color: selectedCategory.accent,
+                      }}
+                    >
+                      {getCategoryIcon(selectedCategory.id, 'w-5 h-5')}
+                    </span>
+                    <span>{selectedCategory.name}</span>
                   </h3>
                   <p className="font-script text-2xl text-[#F472B6] mb-3">
                     {selectedCategory.tagline}
@@ -175,7 +213,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ onBook }) => {
                 <div className="relative z-10 flex flex-col sm:flex-row gap-3 items-start md:items-center">
                   <Link
                     to={`/category/${selectedCategory.slug}`}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-[#B829A0] to-[#1FD1B2] hover:brightness-110 transition-all shadow-[0_0_20px_rgba(31,209,178,0.25)]"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#0B0C10] bg-[#1FD1B2] hover:bg-[#25e2c2] transition-colors shadow-[0_4px_16px_rgba(31,209,178,0.25)]"
                   >
                     <span>Full Menu & Details</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -219,7 +257,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ onBook }) => {
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C10] via-black/20 to-transparent pointer-events-none" />
 
                         {service.popular && (
-                          <span className="absolute top-3 right-3 text-[10px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-full bg-gradient-to-r from-[#B829A0] to-[#1FD1B2] text-white shadow-lg">
+                          <span className="absolute top-3 right-3 text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-[#D4AF37]/50 text-[#D4AF37] shadow-md">
                             Most Requested
                           </span>
                         )}

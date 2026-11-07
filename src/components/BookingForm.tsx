@@ -13,6 +13,7 @@ import {
   Copy,
   MessageSquare,
   AlertCircle,
+  ShieldCheck,
 } from 'lucide-react';
 import { BookingFormData } from '../types';
 
@@ -436,28 +437,29 @@ export const BookingForm: React.FC<BookingFormProps> = ({
                 )}
               </div>
 
-              {/* Full-width animated gradient button (#B829A0 to #1FD1B2) with the label "Send Enquiry" */}
+              {/* Primary submit action */}
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 rounded-full text-sm sm:text-base font-bold text-white uppercase tracking-wider bg-gradient-to-r from-[#B829A0] via-[#9333ea] to-[#1FD1B2] shadow-[0_0_30px_rgba(31,209,178,0.4)] hover:shadow-[0_0_45px_rgba(31,209,178,0.6)] transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2.5 disabled:opacity-70"
+                className="w-full py-4 rounded-full text-sm sm:text-base font-bold text-[#0B0C10] uppercase tracking-wider bg-[#1FD1B2] hover:bg-[#25e2c2] shadow-[0_4px_24px_rgba(31,209,178,0.35)] hover:shadow-[0_6px_30px_rgba(31,209,178,0.5)] transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2.5 disabled:opacity-70"
                 id="send-enquiry-btn"
               >
                 {isSubmitting ? (
                   <>
-                    <span className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full" />
+                    <span className="animate-spin w-4 h-4 border-2 border-[#0B0C10] border-t-transparent rounded-full" />
                     <span>Processing Enquiry...</span>
                   </>
                 ) : (
                   <>
-                    <Send className="w-4 h-4" />
+                    <Send className="w-4 h-4 text-[#0B0C10]" />
                     <span>Send Enquiry</span>
                   </>
                 )}
               </button>
 
-              <div className="text-center text-[11px] text-slate-400 pt-2">
-                🔒 Your personal data is kept strictly confidential • Quick confirmation via SMS & Email
+              <div className="text-center text-[11px] text-slate-400 pt-2 flex items-center justify-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#1FD1B2] flex-shrink-0" />
+                <span>Your personal data is kept strictly confidential • Quick confirmation via SMS & Email</span>
               </div>
             </form>
           )}
