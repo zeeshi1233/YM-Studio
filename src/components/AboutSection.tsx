@@ -23,13 +23,14 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
 }) => {
   const qualifications = [
     {
-      title: 'Diploma of Beauty Therapy',
-      detail: 'Comprehensive skin biology, clinical therapy & client care',
-    },
-    {
       title: 'Graduate Diploma in Dermal Science',
       detail: 'Advanced dermal protocols, clinical skin analysis & treatment design',
     },
+    {
+      title: 'Diploma of Beauty Therapy',
+      detail: 'Comprehensive skin biology, clinical therapy & client care',
+    },
+
     {
       title: 'Qualifications in Makeup Artistry',
       detail: 'High-definition bridal, photographic, editorial & special event glam',
